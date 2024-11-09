@@ -4,8 +4,9 @@
     <%- include("../../partials/head.ejs", {title: "Login"}) %>
   </head>
   <body>
-    <%- include('../../partials/header.ejs') %>
-    <div class="form-container"><form action="" method="post" id="form" class="border p-4">
+    <header><%- include('../../partials/header.ejs') %></header>
+    <main>
+    <div class="form-container"><form action="/auth/login" method="post" id="form" class="border p-4">
         <h4 class="mb-3">Login</h4>
         <div class="form-group">
             <label for="email">Email address</label>
@@ -17,9 +18,9 @@
         </div>
         <button type="submit" id="submit" class="btn btn-primary btn-block">Submit</button>
         <div>
-            <p>Don't have an account? <a href="/register">Sign up</a>.</p>
+            <p>Don't have an account? <a href="/auth/register">Sign up</a>.</p>
           </div>
     </form></div>
-   
+    </main>
 </body>
 </html>

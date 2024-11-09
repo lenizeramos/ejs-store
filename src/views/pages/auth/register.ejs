@@ -6,7 +6,7 @@
   <body>
     <%- include('../../partials/header.ejs') %>
     <div class="form-container">
-      <form action="/register" method="post" id="form" class="border p-4">
+      <form action="/auth/register" method="post" id="form" class="border p-4">
         <h4 class="mb-3">Register</h4>
         <p>Please fill in this form to create an account.</p>
         <div class="form-group">
@@ -46,7 +46,7 @@
           Register
         </button>
         <div>
-          <p>Already have an account? <a href="/login">Sign in</a>.</p>
+          <p>Already have an account? <a href="/auth/login">Sign in</a>.</p>
         </div>
       </form>
     </div>

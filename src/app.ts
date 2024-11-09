@@ -14,7 +14,7 @@ app.use(
     secret: "My secret value",
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false, maxAge: 1000 * 1 * 1 * 1 * 10 },
+    cookie: { secure: false, maxAge: 1000 * 1 * 1 * 1 * 60 },
   })
 );
 
