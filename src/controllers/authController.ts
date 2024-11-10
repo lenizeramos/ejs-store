@@ -3,12 +3,7 @@ import bcrypt from "bcrypt";
 import { setAuthUser, getAuthUsers } from "../models/authUserModel";
 
 export const getLogin: RequestHandler = (req: Request, res: Response) => {
-  if (req.session.user) {
-    console.log("User already logged in");
-    res.redirect("/");
-  } else {
-    res.render("pages/auth/login", { error: null });
-  }
+  res.render("pages/auth/login", { error: null });
 };
 
 export const getRegister: RequestHandler = (req: Request, res: Response) => {
@@ -27,7 +22,6 @@ export const registerUser: RequestHandler = async (
   next: NextFunction
 ) => {
   const { name, email, password } = req.body;
-  //console.log(req.body);
 
   const hashedPassword = await bcrypt.hash(password, 10);
   setAuthUser({ name, email, password: hashedPassword });
@@ -42,7 +36,6 @@ export const loginUser: RequestHandler = async (
   next: NextFunction
 ) => {
   const { email, password } = req.body;
-  //console.log(req.body);
 
   if (req.session.user) {
     console.log("User already logged in", req.session.user.name);
@@ -57,7 +50,7 @@ export const loginUser: RequestHandler = async (
     req.session.user = { name: user.name, email: user.email };
     res.redirect("/");
   } else {
-    res.render('pages/auth/login', { error: 'Invalid email or password!' });
+    res.render("pages/auth/login", { error: "Invalid email or password!" });
   }
 };
 

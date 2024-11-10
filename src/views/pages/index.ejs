@@ -4,7 +4,7 @@
     <%- include("../partials/head.ejs", { title: "Home" }) %>
   </head>
   <body>
-    <header><%- include("../partials/header.ejs") %></header>
+    <header><%- include("../partials/header.ejs", {page: "home"}) %></header>
     <h1>Home</h1>
     <p>Welcome, <%= user.name %>!</p>
 </body>
