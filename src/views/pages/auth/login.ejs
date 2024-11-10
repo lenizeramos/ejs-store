@@ -4,7 +4,7 @@
     <%- include("../../partials/head.ejs", {title: "Login"}) %>
   </head>
   <body>
-    <header><%- include('../../partials/header.ejs') %></header>
+    <header><%- include('../../partials/header.ejs', {page: "login"}) %></header>
     <main>
     <div class="form-container"><form action="/auth/login" method="post" id="form" class="border p-4">
         <h4 class="mb-3">Login</h4>
@@ -16,6 +16,11 @@
             <label for="password">Password</label>
             <input type="password" class="form-control" name="password" id="password" required>
         </div>
+        <% if (error) { %>
+          <div class="alert alert-danger" role="alert">
+            <%= error %>
+          </div>
+        <% } %>
         <button type="submit" id="submit" class="btn btn-primary btn-block">Submit</button>
         <div>
             <p>Don't have an account? <a href="/auth/register">Sign up</a>.</p>

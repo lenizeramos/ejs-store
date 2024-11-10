@@ -1,11 +1,15 @@
 <nav class="navbar navbar-expand navbar-light bg-light"></nav>
     <a class="navbar-brand" href="/">HOME</a>
     <ul class="navbar-nav mr-auto">
+      <% if (page == "register") { %>
       <li class="nav-item">
         <a class="nav-link" href="/auth/login">Login</a>
       </li>
+      <% } %>
+      <% if (page == "login") { %>
       <li class="nav-item">
         <a class="nav-link" href="/auth/register">Register</a>
       </li>
+      <% } %>
     </ul>
   </nav>

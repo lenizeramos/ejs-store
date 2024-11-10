@@ -7,12 +7,12 @@ export const getLogin: RequestHandler = (req: Request, res: Response) => {
     console.log("User already logged in");
     res.redirect("/");
   } else {
-    res.render("pages/auth/login");
+    res.render("pages/auth/login", { error: null });
   }
 };
 
 export const getRegister: RequestHandler = (req: Request, res: Response) => {
-  res.render("pages/auth/register");
+  res.render("pages/auth/register", { error: null });
 };
 
 declare module "express-session" {
@@ -42,7 +42,7 @@ export const loginUser: RequestHandler = async (
   next: NextFunction
 ) => {
   const { email, password } = req.body;
-  console.log(req.body);
+  //console.log(req.body);
 
   if (req.session.user) {
     console.log("User already logged in", req.session.user.name);
@@ -57,7 +57,7 @@ export const loginUser: RequestHandler = async (
     req.session.user = { name: user.name, email: user.email };
     res.redirect("/");
   } else {
-    res.redirect("/auth/login");
+    res.render('pages/auth/login', { error: 'Invalid email or password!' });
   }
 };
 
