@@ -1,11 +1,12 @@
 import { Router } from "express";
 import { getLogin, getRegister, loginUser, logoutUser, registerUser } from "../controllers/authController";
+import { verifySession } from "../middleware/extendSession";
 
 const router = Router();
 
-router.get("/login", getLogin);
+router.get("/login", verifySession, getLogin);
 router.post('/login', loginUser);
-router.get("/register", getRegister);
+router.get("/register", verifySession, getRegister);
 router.post("/register", registerUser);
 router.get("/logout", logoutUser);
 

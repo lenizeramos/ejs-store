@@ -4,19 +4,19 @@
     <%- include("../../partials/head.ejs", {title: "Register"}) %>
   </head>
   <body>
-    <%- include('../../partials/header.ejs') %>
+    <%- include('../../partials/header.ejs', {page: "register"}) %>
     <div class="form-container">
       <form action="/auth/register" method="post" id="form" class="border p-4">
         <h4 class="mb-3">Register</h4>
         <p>Please fill in this form to create an account.</p>
         <div class="form-group">
-          <label for="username">Username</label>
+          <label for="name">Name</label>
           <input
             type="text"
             class="form-control"
-            name="username"
-            id="username"
-            placeholder="Enter Username"
+            name="name"
+            id="name"
+            placeholder="Enter Name"
             required
           />
         </div>
