@@ -4,6 +4,7 @@ import homeRoute from "./routes/homeRoute";
 import authRoute from "./routes/authRoute";
 import errorRoute from "./routes/errorRoute";
 import session from "express-session";
+import productRoute from "./routes/productRoute";
 
 export const app = express();
 
@@ -25,6 +26,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // Routes
 app.use("/", homeRoute);
 app.use("/auth", authRoute);
+app.use(productRoute);
 
 // Error handling
 app.all("*", errorRoute);

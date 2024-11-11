@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partials/head.ejs", { title: "Products" }) %>
+  </head>
+  <body>
+    <header><%- include("../partials/header.ejs", {page: "products"}) %></header>
+    <h1>List of products</h1>
+    <ul>
+        <% products.forEach(product => { %>
+            <li>
+                <h2><%= product.title %></h2>
+                <p><%= product.description %></p>
+                <p>Price: $<%= product.price %></p>
+                <img src="<%= product.image %>" alt="<%= product.title %>">
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>
