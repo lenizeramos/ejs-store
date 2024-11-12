@@ -1,3 +1,5 @@
+import { fetchProducts } from "../utilities/fetchProducts";
+
 export interface Product {
   id: number;
   title: string;
@@ -17,10 +19,8 @@ let products: Product[] = [];
 
 export const getProducts = async () => {
   if (products.length === 0) {
-    const response = await fetch("https://fakestoreapi.com/products");
-    products = (await response.json()) as Product[];
+    products = await fetchProducts() as Product[];
   }
-  console.log(products);
 
   return products;
 };
