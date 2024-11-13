@@ -7,5 +7,13 @@
     <header><%- include("../partials/header.ejs", {page: "home"}) %></header>
     <h1>Home</h1>
     <p>Welcome, <%= user.name %>!</p>
+    <ul>
+      <% products.forEach(product => { %>
+          <li>
+              <h2><%= product.title %></h2>
+              <img src="<%= product.image %>" alt="<%= product.title %>">
+          </li>
+      <% }) %>
+  </ul>
 </body>
 </html>

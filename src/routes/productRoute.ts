@@ -1,10 +1,10 @@
 import { Router } from "express";
-import { getIndex} from "../controllers/homeController";
 import { requireAuth } from "../middleware/requireAuth";
 import { extendSession } from "../middleware/extendSession";
+import { getProductsList } from "../controllers/productController";
 
 const router = Router();
 
-router.get("/", requireAuth, extendSession, getIndex);
+router.get("/products", requireAuth, extendSession, getProductsList);
 
 export default router;
