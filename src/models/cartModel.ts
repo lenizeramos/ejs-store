@@ -31,6 +31,7 @@ export const getCartItems = (item: Product) => {
 
 
  *////////////////////////////
+
 interface CartItem {
   product: Product;
   quantity: number;

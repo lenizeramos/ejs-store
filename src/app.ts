@@ -6,6 +6,7 @@ import errorRoute from "./routes/errorRoute";
 import session from "express-session";
 import productRoute from "./routes/productRoute";
 import cartRoute from "./routes/cartRoute";
+import { SECRET } from "./env";
 
 export const app = express();
 
@@ -13,10 +14,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   session({
-    secret: "My secret value",
+    secret: SECRET,
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false, maxAge: 1000 * 60 * 60 * 24 * 7 },
+    cookie: { secure: false, maxAge: 1000 * 60 * 60 * 24 * 7 }
   })
 );
 
