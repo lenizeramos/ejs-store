@@ -23,3 +23,8 @@ export const setAuthUser = (user: AuthUser) => {
 export const getAuthUsers = () => {
   return authUsers;
 };
+
+export const getAuthUserByEmail = (email: string) => {
+  return authUsers.find((u) => u.email === email);
+};
+

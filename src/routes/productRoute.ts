@@ -1,6 +1,5 @@
 import { Router } from "express";
-import { requireAuth } from "../middleware/requireAuth";
-import { extendSession } from "../middleware/extendSession";
+import { requireAuth, extendSession } from "../middleware/session";
 import { getProductsList } from "../controllers/productController";
 
 const router = Router();
