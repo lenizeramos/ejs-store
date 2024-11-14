@@ -40,8 +40,9 @@ export const loginUser: RequestHandler = async (
   const { email, password } = req.body;
 
   if (req.session.user) {
-    console.log("User already logged in", req.session.user.name);
+    //console.log("User already logged in", req.session.user.name);
     res.redirect("/");
+    return next();
   }
 
   const users = getAuthUsers();
@@ -50,6 +51,7 @@ export const loginUser: RequestHandler = async (
 
   if (user && (await bcrypt.compare(password, user.password))) {
     req.session.user = { name: user.name, email: user.email };
+    //console.log("User logged in", req.session.user);
     res.redirect("/");
   } else {
     res.render("pages/auth/login", { error: "Invalid email or password!" });
@@ -58,6 +60,9 @@ export const loginUser: RequestHandler = async (
 
 export const logoutUser: RequestHandler = (req: Request, res: Response) => {
   req.session.destroy((err) => {
+    if (err) {
+      console.error("Error destroying session:", err);
+    }
     res.redirect("/auth/login");
   });
 };

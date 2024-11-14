@@ -18,8 +18,10 @@ export interface Rating {
 let products: Product[] = [];
 
 export const getProducts = async () => {
+  console.log("Products length", products.length);
   if (products.length === 0) {
-    products = await fetchProducts() as Product[];
+    console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    products = (await fetchProducts()) as Product[];
   }
 
   return products;
@@ -27,5 +29,4 @@ export const getProducts = async () => {
 
 /* export const getProductById = (id: number) => {
   return products.find((p) => p.id === id);
-};
- */
+}; */

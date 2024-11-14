@@ -9,7 +9,7 @@ export interface AuthUser {
 let authUsers: AuthUser[] = [{
   name: "admin",
   email: "admin@admin.com",
-  password: bcrypt.hashSync("admin", 10)
+  password: bcrypt.hashSync("admiN*&", 10)
 }];
 
 export const setAuthUser = (user: AuthUser) => {

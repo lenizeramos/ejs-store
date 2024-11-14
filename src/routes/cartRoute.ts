@@ -1,3 +1,8 @@
+/* router.post("/cart/add", verifySession, addToCart);
+router.post("/cart/remove", verifySession, removeFromCart);
+router.post("/cart/checkout", verifySession, checkoutCart); */
+
+
 import { Router } from "express";
 import { getCartInfo } from "../controllers/cartController";
 import { requireAuth } from "../middleware/requireAuth";

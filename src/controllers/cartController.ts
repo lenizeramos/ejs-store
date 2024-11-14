@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { getCart } from "../models/cartModel";
 
-// Função para ver o carrinho
 export const getCartInfo = (req: Request, res: Response) => {
   if (!req.session.user) {
     return res.status(401).json({ message: 'Usuário não autenticado' });
