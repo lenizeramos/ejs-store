@@ -1,6 +1,7 @@
 import { Request, Response, RequestHandler, NextFunction } from "express";
 import bcrypt from "bcrypt";
 import { setAuthUser, getAuthUsers } from "../models/authUserModel";
+import { createEmptyCart } from "../models/cartModel";
 
 export const getLogin: RequestHandler = (req: Request, res: Response) => {
   res.render("pages/auth/login", { error: null });
@@ -25,6 +26,7 @@ export const registerUser: RequestHandler = async (
 
   const hashedPassword = await bcrypt.hash(password, 10);
   setAuthUser({ name, email, password: hashedPassword });
+  createEmptyCart(email);
   req.session.user = { name, email };
 
   res.redirect("/");

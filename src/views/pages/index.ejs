@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include("../partials/head.ejs", { title: "Home" }) %>
+    <%- include("../partials/head.ejs", { title: "Home", styles:"/css/home.css" }) %>
   </head>
   <body>
     <header><%- include("../partials/header.ejs", {page: "home"}) %></header>
-    <h1>Home</h1>
-    <p>Welcome, <%= user.name %>!</p>
-    <ul>
-      <% products.forEach(product => { %>
-          <li>
-              <h2><%= product.title %></h2>
-              <img src="<%= product.image %>" alt="<%= product.title %>">
-          </li>
-      <% }) %>
-  </ul>
+    <div class="big-container">
+      <h1>Home</h1>
+    <div class="wrapper-container">
+      <ul>
+        <% products.forEach(product => { %>
+            <li class="item-container">
+                <div class="item-wrapper">
+                  <div class="image-container" style = "background-image: url('<%= product.image%>');"></div>
+                  
+                  <p><%= product.title %></p>
+                </div>
+            </li>
+        <% }) %>
+    </ul>
+    </div>
+    </div>
 </body>
 </html>
