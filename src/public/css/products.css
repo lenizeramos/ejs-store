@@ -1,5 +1,71 @@
-h1 {
+nav {
+  background-color: #546a76;
+}
+nav a {
+  color: #dbd3c9 !important;
+}
+
+body {
+  background-color: #d0b17a;
+}
+
+.big-container {
+  padding: 0 2rem;
+}
+.big-container h1 {
+  padding: 1rem 0;
+  margin: 0;
+  color: #dbd3c9;
+}
+.big-container .wrapper-container {
+  padding: 1rem;
+}
+.big-container .wrapper-container ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0;
+}
+.big-container .wrapper-container ul .item-container {
+  width: 30%;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 15px;
+  background-color: #b4ceb3;
+}
+.big-container .wrapper-container ul .item-container .item-wrapper {
   border: 1px red solid;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+}
+.big-container .wrapper-container ul .item-container .item-wrapper .image-container {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+}
+.big-container .wrapper-container ul .item-container .item-wrapper .product-title {
+  border: 1px red solid;
+}
+.big-container .wrapper-container ul .item-container .item-wrapper .product-description {
+  border: 1px red solid;
+}
+.big-container .wrapper-container ul .item-container .item-wrapper .price {
+  border: 1px red solid;
+}
+.big-container .wrapper-container ul .item-container .item-wrapper p {
+  font-weight: bold;
+  margin: 0;
+}
+.big-container .wrapper-container ul .item-container .item-wrapper img {
+  width: 50%;
+  height: auto;
+  align-self: center;
 }
 
 /*# sourceMappingURL=products.css.map */

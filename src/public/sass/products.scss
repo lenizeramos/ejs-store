@@ -1,3 +1,78 @@
-h1{
-    border: 1px red solid;
+nav{
+    background-color: #546a76;
+    a{
+        color: #dbd3c9 !important;
+    }
+}
+body{
+    background-color: #d0b17a;
+}
+
+
+.big-container{
+    padding: 0 2rem;
+    h1{
+        // border: 1px red solid;
+        padding: 1rem 0;
+        margin: 0;
+        color: #dbd3c9;
+    }
+    .wrapper-container{
+        // border: 1px green solid;
+        padding: 1rem;
+        ul{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 0;
+            .item-container{
+                // border: 1px red solid;
+                width: 30%;
+                padding: 1rem;
+                text-align: center;
+                border-radius: 15px;
+                background-color: #b4ceb3;
+                .item-wrapper{
+                    border: 1px red solid;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    border-radius: 15px;
+                    // justify-content: space-between;
+                    .image-container{
+                        width: 100%;
+                        height: 300px;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        // background-position: center; this is for responsive
+                        border-radius: 15px;
+                    }
+                    .product-title{
+                        border: 1px red solid;
+                    }
+                    .product-description{
+                        border: 1px red solid;
+
+                    }
+                    .price{
+                        border: 1px red solid;
+
+                    }
+                    p{
+                        // border: 1px red solid;
+                        font-weight: bold;
+                        margin: 0;
+                        // color: #dbd3c9;
+                    }
+                    img{
+                        width: 50%;
+                        height: auto;
+                        align-self: center;
+                    }
+                }
+            }
+        }
+    }
 }
