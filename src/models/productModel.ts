@@ -18,9 +18,7 @@ export interface Rating {
 let products: Product[] = [];
 
 export const getProducts = async () => {
-  console.log("Products length", products.length);
   if (products.length === 0) {
-    console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
     products = (await fetchProducts()) as Product[];
   }
 

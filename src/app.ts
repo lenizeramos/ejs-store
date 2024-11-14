@@ -7,6 +7,7 @@ import session from "express-session";
 import productRoute from "./routes/productRoute";
 import cartRoute from "./routes/cartRoute";
 import { SECRET } from "./env";
+import { SESSION_MAX_AGE } from "./middleware/constants";
 
 export const app = express();
 
@@ -17,7 +18,7 @@ app.use(
     secret: SECRET,
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false, maxAge: 1000 * 60 * 60 * 24 * 7 }
+    cookie: { secure: false, maxAge: SESSION_MAX_AGE }
   })
 );
 

@@ -1,7 +1,6 @@
 import { Router } from "express";
-import { getIndex} from "../controllers/homeController";
-import { requireAuth } from "../middleware/requireAuth";
-import { extendSession } from "../middleware/extendSession";
+import { getIndex } from "../controllers/homeController";
+import { requireAuth, extendSession } from "../middleware/session";
 
 const router = Router();
 

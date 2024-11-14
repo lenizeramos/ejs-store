@@ -1,6 +1,6 @@
 import { Request, Response, RequestHandler, NextFunction } from "express";
 import bcrypt from "bcrypt";
-import { setAuthUser, getAuthUsers } from "../models/authUserModel";
+import { setAuthUser, getAuthUserByEmail } from "../models/authUserModel";
 import { createEmptyCart } from "../models/cartModel";
 
 export const getLogin: RequestHandler = (req: Request, res: Response) => {
@@ -40,18 +40,13 @@ export const loginUser: RequestHandler = async (
   const { email, password } = req.body;
 
   if (req.session.user) {
-    //console.log("User already logged in", req.session.user.name);
     res.redirect("/");
-    return next();
   }
 
-  const users = getAuthUsers();
-
-  const user = users.find((u) => u.email === email);
+  const user = getAuthUserByEmail(email);
 
   if (user && (await bcrypt.compare(password, user.password))) {
     req.session.user = { name: user.name, email: user.email };
-    //console.log("User logged in", req.session.user);
     res.redirect("/");
   } else {
     res.render("pages/auth/login", { error: "Invalid email or password!" });
