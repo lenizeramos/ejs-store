@@ -25,6 +25,6 @@ export const getProducts = async () => {
   return products;
 };
 
-/* export const getProductById = (id: number) => {
-  return products.find((p) => p.id === id);
-}; */
+export const getProductById = async (id: number) => {
+  return (await getProducts()).find((p: Product) => p.id === id);
+};

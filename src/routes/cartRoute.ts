@@ -1,13 +1,13 @@
-/* router.post("/cart/add", verifySession, addToCart);
-router.post("/cart/remove", verifySession, removeFromCart);
-router.post("/cart/checkout", verifySession, checkoutCart); */
-
 import { Router } from "express";
-import { getCartInfo } from "../controllers/cartController";
-import { requireAuth, extendSession } from "../middleware/session";
+import { getCartInfo, addToCart} from "../controllers/cartController";
+import { requireAuth, extendSession} from "../middleware/session";
 
 const router = Router();
 
 router.get("/cart", requireAuth, extendSession, getCartInfo);
+router.post("/cart/add", requireAuth, extendSession, addToCart);
+//router.put("/cart/update", requireAuth, extendSession, updateCart);
+//router.delete("/cart/remove", requireAuth, extendSession, removeFromCart);
+//router.post("/cart/checkout", requireAuth, extendSession, checkoutCart);
 
 export default router;
