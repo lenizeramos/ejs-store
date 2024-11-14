@@ -5,6 +5,7 @@ import authRoute from "./routes/authRoute";
 import errorRoute from "./routes/errorRoute";
 import session from "express-session";
 import productRoute from "./routes/productRoute";
+import cartRoute from "./routes/cartRoute";
 
 export const app = express();
 
@@ -23,12 +24,11 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
 
-
-
 // Routes
 app.use("/", homeRoute);
 app.use("/auth", authRoute);
 app.use(productRoute);
+app.use(cartRoute);
 
 // Error handling
 app.all("*", errorRoute);
