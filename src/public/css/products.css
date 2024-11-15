@@ -52,9 +52,6 @@ body {
 .big-container .wrapper-container ul .item-container .item-wrapper .product-title {
   border: 1px red solid;
 }
-.big-container .wrapper-container ul .item-container .item-wrapper .product-description {
-  border: 1px red solid;
-}
 .big-container .wrapper-container ul .item-container .item-wrapper .price {
   border: 1px red solid;
 }
@@ -66,6 +63,13 @@ body {
   width: 50%;
   height: auto;
   align-self: center;
+}
+.big-container .wrapper-container ul .item-container .item-wrapper .product-modal {
+  border: 1px green solid;
+  display: none;
+}
+.big-container .wrapper-container ul .item-container .item-wrapper .product-modal .product-description {
+  border: 1px red solid;
 }
 
 /*# sourceMappingURL=products.css.map */

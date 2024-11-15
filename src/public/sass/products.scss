@@ -52,10 +52,6 @@ body{
                     .product-title{
                         border: 1px red solid;
                     }
-                    .product-description{
-                        border: 1px red solid;
-
-                    }
                     .price{
                         border: 1px red solid;
 
@@ -70,6 +66,19 @@ body{
                         width: 50%;
                         height: auto;
                         align-self: center;
+                    }
+
+                    // .product-buttons{
+
+                    // }
+                    .product-modal{
+                        border: 1px green solid;
+                        display:none;
+
+                        .product-description{
+                        border: 1px red solid;
+                            
+                        }
                     }
                 }
             }
