@@ -36,7 +36,7 @@ let cartList: Cart[] = [
 
 export const createEmptyCart = (userEmail: string) => {
   if (cartList.find((cart) => cart.userEmail === userEmail)) {
-    console.log("Cart already exists");
+    console.log("Cart already exists for this user.");
     return;
   }
   cartList.push({ userEmail, products: [] });
@@ -55,11 +55,6 @@ export const addProductToCart = (userEmail: string, product: Product) => {
   const cart = getCart(userEmail);
   cart?.products.push({ product, quantity: 1 });
 };
-
-/* export const removeProductFromCart = (userEmail: string, productId: number) => {
-  const cart = getCart(userEmail);
-  cart?.products = cart?.products.filter((item) => item.product.id !== productId);
-}; */
 
 export const updateProductQuantity = (userEmail: string, productId: number, quantity: number) => {
   const cart = getCart(userEmail);
@@ -81,4 +76,11 @@ export const incrementProductQuantity = (userEmail: string, productId: number) =
 export const isProductInCart = (userEmail: string, productId: number) => {
   const cart = getCart(userEmail);
   return cart?.products.some((item) => item.product.id === productId);
+};
+
+export const removeProductFromCart = (userEmail: string, productId: number) => {
+  const cart = getCart(userEmail);
+  if (cart) {
+    cart.products = cart.products.filter((item) => item.product.id !== productId);
+  }
 };
