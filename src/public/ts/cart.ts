@@ -22,9 +22,15 @@ $(() => {
   updateButtons.on("click", (e: JQuery.ClickEvent) => {
     const target = $(e.currentTarget);
     const productId = target.data("product-id") as number;
-    const quantity = 20;
+    const quantity = target.closest("form").find("input[name='quantity']").val() as string;
 
-    postData("/cart/update", "PUT", { productId: productId, quantity: quantity });
+    const quantityNumber = parseInt(quantity, 10);
+
+    if (!isNaN(quantityNumber) && quantityNumber >= 1) {
+      postData("/cart/update", "PUT", { productId: productId, quantity: quantityNumber });
+    } else {
+      alert("Invalid quantity!");
+    }
   });
 
   const deleteButtons = $(".delete-button");
@@ -34,5 +40,5 @@ $(() => {
     const productId = target.data("product-id") as number;
 
     postData("/cart/delete", "DELETE", { productId: productId });
-  }); 
+  });
 });

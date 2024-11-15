@@ -20,8 +20,14 @@ $(function () {
     updateButtons.on("click", function (e) {
         var target = $(e.currentTarget);
         var productId = target.data("product-id");
-        var quantity = 20
-        postData("/cart/update", "PUT", { productId: productId, quantity: quantity });
+        var quantity = target.closest("form").find("input[name='quantity']").val();
+        var quantityNumber = parseInt(quantity, 10);
+        if (!isNaN(quantityNumber) && quantityNumber >= 1) {
+            postData("/cart/update", "PUT", { productId: productId, quantity: quantityNumber });
+        }
+        else {
+            alert("Invalid quantity!");
+        }
     });
     var deleteButtons = $(".delete-button");
     deleteButtons.on("click", function (e) {
