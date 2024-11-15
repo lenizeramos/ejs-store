@@ -31,11 +31,11 @@ export const addToCart = async (req: Request, res: Response) => {
 export const updateCart = (req: Request, res: Response) => {
   try {
     const { productId, quantity } = req.body;
-    if (!productId || !quantity) {
-      return res.status(400).send("Parameters 'productId' and 'quantity' are required.");
-    }
     if (quantity <= 0) {
       return res.status(400).send("Quantity must be greater than 0.");
+    }
+    if (!productId || !quantity) {
+      return res.status(400).send("Parameters 'productId' and 'quantity' are required.");
     }
     if (isNaN(quantity)) {
       return res.status(400).send("Quantity must be a number.");
