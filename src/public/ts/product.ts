@@ -1,5 +1,5 @@
 $(()=>{
-    console.log("I'm Ivan")
+    console.log("New")
 
     const url = "localhost:3000/cart/add";
 
@@ -8,7 +8,7 @@ $(()=>{
             url: url,
             type: 'POST',
             data:{
-                id:id
+                productId:id
             },
             success: function(response){
                 console.log("Server Response: ", response)
@@ -18,6 +18,19 @@ $(()=>{
             }
         })
     }
+
+    const addToCartButtons = $(".add-to-cart");
+    
+    addToCartButtons.on('click', (e:JQuery.ClickEvent) => {
+        const target = $(e.currentTarget);
+        const productId = target.data('product-id') as number;
+
+        postData(productId)
+
+        console.log("Product ID: ", productId)
+    })
+
+});
 
 
     // $("#1").on("click", ()=>{
@@ -38,4 +51,5 @@ $(()=>{
     //     console.log($(".add-to-cart").val())
     //     // console.log("item: ",item)
     // })
-})
+
+

@@ -20,14 +20,13 @@
                             <p class="price">Price: $<%= product.price %></p>
                             <div class="product-buttons">
                                 <div class="button">
-                                    <button class="more-details">More Details</button>
-                                    <button class="add-to-cart" id="<%= product.id%>" value="<%= product.id%>" onclick={function() {
-                                        console.log(product.id)
-                                    }>Add to Cart</button>
+                                    <!-- <button class="more-details"><a href="<%= product.description %>">More Details</a></button> -->
+                                    <button class="add-to-cart" 
+                                    data-product-title="<%= product.title%>" data-product-id="<%= product.id%>" >Add to Cart</button>
                                 </div>
                             </div>
-
-                            <!-- <form action="/cart/add">
+<!-- 
+                            <form action="/cart/add">
                                 <input type="hidden" name="<%= product.id %>" value="<%= product.id %>">
                                 <button type="submit">Add to cart</button>
                             </form> -->
