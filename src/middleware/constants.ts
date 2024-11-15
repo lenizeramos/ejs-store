@@ -1,1 +1,1 @@
-export const SESSION_MAX_AGE = 1000 * 1 * 1 * 1 * 60;
+export const SESSION_MAX_AGE = 1000 * 60 * 60 * 24;
