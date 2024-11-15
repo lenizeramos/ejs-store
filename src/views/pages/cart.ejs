@@ -19,12 +19,12 @@
                 <p>Quantity: <%= cartItem.quantity %></p>
                 <img src="<%= cartItem.product.image %>" alt="<%= cartItem.product.title %>">
                 
-                <form id="updateCartForm">
+                
                     <label for="quantity">Quantity:</label>
                     <input type="number" name="quantity" value="<%= cartItem.quantity %>" min="1" required>
                     <input type="hidden" name="productId" value="<%= cartItem.product.id %>">
-                    <button type="submit">Update</button>
-                  </form>
+                    <button type="button" >Update</button>
+                
 
                 <form action="/cart/remove/<%= cartItem.product.id %>" method="DELETE"">
                     <button type="submit">Delete</button>
