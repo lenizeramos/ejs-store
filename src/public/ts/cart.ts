@@ -1,4 +1,4 @@
-$("#updateCartForm").on("submit", function (event) {
+/* $("#updateCartForm").on("submit", function (event) {
   event.preventDefault();
 
   const formData = $(this).serializeArray();
@@ -23,4 +23,4 @@ $("#updateCartForm").on("submit", function (event) {
       alert("An error occurred while updating the cart.");
     }
   });
-});
+}); */
