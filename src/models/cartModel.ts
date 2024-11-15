@@ -1,43 +1,10 @@
 import { Product } from "./productModel";
-/* 
-export interface Cart {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  rating: Rating;
-  totalPrice: number;
-  count: number;
-}
-
-let cartItems: Cart[] = [];
-
-export const setCartItems = (item: Product) => {
-  let totalPrice = item.price;
-  const cartExists = cartItems.find(u => u.id === item.id);
-  if(cartExists){
-    cartExists.count++;
-    cartExists.totalPrice = cartExists.price * cartExists.count;
-  } else {
-    //clicked item is new item
-    cartItems.push({...item, totalPrice:totalPrice, count:1 })
-  }
-}
-
-export const getCartItems = (item: Product) => {
-  return cartItems;
-}
-
-
- *////////////////////////////
-
-interface CartItem {
+export interface CartItem {
   product: Product;
   quantity: number;
 }
 
-interface Cart {
+export interface Cart {
   userEmail: string;
   products: CartItem[];
 }

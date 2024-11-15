@@ -1,0 +1,39 @@
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  .container{
+    width: 80%;
+    list-style: none;
+    border: 1px solid pink;
+    margin: auto;
+    li{
+      height: 250px;
+      width: 90%;
+      margin: auto;
+      display: flex;
+      border: 1px solid red;
+      margin-bottom: 2rem;
+      .imgContainer{
+        height: 100%;
+        place-content: center;
+        img{
+          width: 220px;
+          height: 220px;
+          border-radius: 5px;
+        }
+      }
+      .textContainer{
+        padding-left: 2rem;
+        .title{
+          margin-top: 1rem;
+          margin-bottom: 3rem;
+        }
+        .totalPrice{
+          font-weight: 800;
+        }
+      }
+    }
+  }
+}
