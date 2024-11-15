@@ -1,11 +1,11 @@
 import { Product } from "./productModel";
 
-interface CartItem {
+export interface CartItem {
   product: Product;
   quantity: number;
 }
 
-interface Cart {
+export interface Cart {
   userEmail: string;
   products: CartItem[];
 }

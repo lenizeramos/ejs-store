@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body .container {
+  width: 80%;
+  list-style: none;
+  border: 1px solid pink;
+  margin: auto;
+}
+body .container li {
+  height: 250px;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  border: 1px solid red;
+  margin-bottom: 2rem;
+}
+body .container li .imgContainer {
+  height: 100%;
+  place-content: center;
+}
+body .container li .imgContainer img {
+  width: 220px;
+  height: 220px;
+  border-radius: 5px;
+}
+body .container li .textContainer {
+  padding-left: 2rem;
+}
+body .container li .textContainer .title {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+body .container li .textContainer .totalPrice {
+  font-weight: 800;
+}
+
+/*# sourceMappingURL=checkout.css.map */
