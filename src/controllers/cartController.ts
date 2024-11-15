@@ -15,6 +15,7 @@ export const addToCart = async (req: Request, res: Response) => {
     }
     const product = await getProductById(productId);
 
+
     if (!product) {
       return res.status(400).send("Product not found.");
     }

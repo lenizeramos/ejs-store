@@ -6,7 +6,7 @@ export const getIndex = async (req: Request, res: Response) => {
   const lessProducts = [];
 
   // to do: get 5 random products
-  for (let i = 0; i <= 5; i++) {
+  for (let i = 0; i <= 3; i++) {
     lessProducts.push(products[i]);
   }
 
