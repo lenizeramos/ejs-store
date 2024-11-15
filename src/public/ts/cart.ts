@@ -1,26 +1,38 @@
-/* $("#updateCartForm").on("submit", function (event) {
-  event.preventDefault();
+$(() => {
+  const postData = (url: string, method: string, data: any) => {
+    $.ajax({
+      url: url,
+      method: method,
+      contentType: "application/json",
+      data: JSON.stringify(data),
+      success: function (response) {
+        console.log("Server Response: ", response);
+        window.location.reload();
+      },
+      error: function (xhr, status, error) {
+        console.log("Request failed. Status: " + status);
+        console.log("Error: " + error);
+        console.log("Response text: " + xhr.responseText);
+      }
+    });
+  };
 
-  const formData = $(this).serializeArray();
-  const data: { [key: string]: string } = {};
-  formData.forEach((field) => {
-    data[field.name] = field.value;
+  const updateButtons = $(".update-button");
+
+  updateButtons.on("click", (e: JQuery.ClickEvent) => {
+    const target = $(e.currentTarget);
+    const productId = target.data("product-id") as number;
+    const quantity = 20;
+
+    postData("/cart/update", "PUT", { productId: productId, quantity: quantity });
   });
 
-  $.ajax({
-    url: "/cart/update",
-    method: "PUT",
-    contentType: "application/json",
-    data: JSON.stringify({
-      productId: data.productId,
-      quantity: data.quantity
-    }),
-    success: function (response) {
-      window.location.href = "/cart";
-    },
-    error: function (xhr, status, error) {
-      console.error("Error:", error);
-      alert("An error occurred while updating the cart.");
-    }
-  });
-}); */
+  const deleteButtons = $(".delete-button");
+
+  deleteButtons.on("click", (e: JQuery.ClickEvent) => {
+    const target = $(e.currentTarget);
+    const productId = target.data("product-id") as number;
+
+    postData("/cart/delete", "DELETE", { productId: productId });
+  }); 
+});

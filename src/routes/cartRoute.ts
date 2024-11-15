@@ -4,10 +4,10 @@ import { requireAuth, extendSession} from "../middleware/session";
 
 const router = Router();
 
-router.get("/cart", requireAuth, extendSession, getCartInfo);
-router.post("/cart/add", requireAuth, extendSession, addToCart);
-router.put("/cart/update", requireAuth, extendSession, updateCart);
-router.delete("/cart/delete", requireAuth, extendSession, removeFromCart);
-//router.post("/cart/checkout", requireAuth, extendSession, checkoutCart);
+router.get("/", requireAuth, extendSession, getCartInfo);
+router.post("/add", requireAuth, extendSession, addToCart);
+router.put("/update", requireAuth, extendSession, updateCart);
+router.delete("/delete", requireAuth, extendSession, removeFromCart);
+//router.post("/checkout", requireAuth, extendSession, checkoutCart);
 
 export default router;

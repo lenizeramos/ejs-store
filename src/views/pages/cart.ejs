@@ -5,33 +5,76 @@
     <script src="/js/cart.js" defer></script>
   </head>
   <body>
-    <header><%- include("../partials/header.ejs", {page: "cart"}) %></header>
-    <h1>Cart</h1>
-    <% if (cart.products.length === 0) { %>
-        <p>Your cart is empty. Let's add some items!!</p>
-    <% } else { %>
-    <ul>
-        <% cart.products.forEach(cartItem => { %>
-            <li>
-                <h2><%= cartItem.product.title %></h2>
-                <p><%= cartItem.product.description %></p>
-                <p>Price: $<%= cartItem.product.price %></p>
-                <p>Quantity: <%= cartItem.quantity %></p>
-                <img src="<%= cartItem.product.image %>" alt="<%= cartItem.product.title %>">
-                
-                
-                    <label for="quantity">Quantity:</label>
-                    <input type="number" name="quantity" value="<%= cartItem.quantity %>" min="1" required>
-                    <input type="hidden" name="productId" value="<%= cartItem.product.id %>">
-                    <button type="button" >Update</button>
-                
-
-                <form action="/cart/remove/<%= cartItem.product.id %>" method="DELETE"">
-                    <button type="submit">Delete</button>
-                </form>
-            </li>
-        <% }) %>
-    </ul>
-    <% } %>
-</body>
+    <header><%- include("../partials/header.ejs", { page: "cart" }) %></header>
+  
+    <div class="container py-5">
+      <h1 class="text-center mb-4">Cart</h1>
+  
+      <% if (cart.products.length === 0) { %>
+        <p class="text-center">Your cart is empty. Let's add some items!</p>
+      <% } else { %>
+        <div class="row">
+          <div class="col-md-8">
+            <ul class="list-group">
+              <% let totalPrice = 0.0; %>
+              <% let totalQuantity = 0; %>
+              <% cart.products.forEach(cartItem => { %>
+                <% totalPrice += cartItem.product.price * cartItem.quantity %>
+                <% totalQuantity += cartItem.quantity %>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <div class="d-flex">
+                    <img src="<%= cartItem.product.image %>" alt="<%= cartItem.product.title %>" class="img-fluid me-3" style="max-width: 100px;">
+                    <div>
+                      
+                      <h5 class="mb-2"><%= cartItem.product.title %></h5>
+                      <p class="mb-2"><%= cartItem.product.description %></p>
+                      <p class="mb-2">Price: $<%= cartItem.product.price %></p>
+                      <p class="mb-2">Quantity: <%= cartItem.quantity %></p>
+                      <p class="mb-2">Total Price: $<%= cartItem.product.price * cartItem.quantity %></p>
+                    </div>
+                  </div>
+  
+                  <div> 
+                    <form class="d-inline-block">
+                      <label for="quantity" class="form-label">Quantity:</label>
+                      <input type="number" class="form-control d-inline-block" name="quantity" value="<%= cartItem.quantity %>" min="1" required style="width: 60px;">
+                      <button type="submit" class="btn btn-outline-primary btn-sm update-button" data-product-id="<%= cartItem.product.id %>" data-quantity="<%= cartItem.quantity %>">Update</button>
+                    </form>
+                  </div>
+  
+                  <div>
+                    <button type="submit" class="btn btn-danger btn-sm delete-button" data-product-id="<%= cartItem.product.id %>">
+                      <i class="fas fa-trash-alt"></i> Remove
+                    </button>
+                  </div>
+                </li>
+              <% }) %>
+            </ul>
+          </div>
+  
+          
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="mb-0">Cart Summary</h5>
+              </div>
+              <div class="card-body">
+                <ul class="list-group">
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <strong>Total Items:</strong> <%= totalQuantity %>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <strong>Total Price:</strong> $<%= totalPrice %>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-footer text-center">
+                <a href="/cart/checkout" class="btn btn-success w-100">Proceed to Checkout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% } %>
+    </div>
+  </body>
 </html>

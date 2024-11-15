@@ -1,26 +1,32 @@
-$("#updateCartForm").on("submit", function (event) {
-  event.preventDefault();
-
-  const formData = $(this).serializeArray();
-  const data: { [key: string]: string } = {};
-  formData.forEach((field) => {
-    data[field.name] = field.value;
-  });
-
-  $.ajax({
-    url: "/cart/update",
-    method: "PUT",
-    contentType: "application/json",
-    data: JSON.stringify({
-      productId: data.productId,
-      quantity: data.quantity
-    }),
-    success: function (response) {
-      window.location.href = "/cart";
-    },
-    error: function (xhr, status, error) {
-      console.error("Error:", error);
-      alert("An error occurred while updating the cart.");
-    }
-  });
+$(function () {
+    var postData = function (url, method, data) {
+        $.ajax({
+            url: url,
+            method: method,
+            contentType: "application/json",
+            data: JSON.stringify(data),
+            success: function (response) {
+                console.log("Server Response: ", response);
+                window.location.reload();
+            },
+            error: function (xhr, status, error) {
+                console.log("Request failed. Status: " + status);
+                console.log("Error: " + error);
+                console.log("Response text: " + xhr.responseText);
+            }
+        });
+    };
+    var updateButtons = $(".update-button");
+    updateButtons.on("click", function (e) {
+        var target = $(e.currentTarget);
+        var productId = target.data("product-id");
+        var quantity = 20
+        postData("/cart/update", "PUT", { productId: productId, quantity: quantity });
+    });
+    var deleteButtons = $(".delete-button");
+    deleteButtons.on("click", function (e) {
+        var target = $(e.currentTarget);
+        var productId = target.data("product-id");
+        postData("/cart/delete", "DELETE", { productId: productId });
+    });
 });

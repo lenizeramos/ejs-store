@@ -29,8 +29,8 @@ app.use(express.static(path.join(__dirname, "public")));
 // Routes
 app.use("/", homeRoute);
 app.use("/auth", authRoute);
-app.use(productRoute);
-app.use(cartRoute);
+app.use("/products", productRoute);
+app.use("/cart", cartRoute);
 
 // Error handling
 app.all("*", errorRoute);

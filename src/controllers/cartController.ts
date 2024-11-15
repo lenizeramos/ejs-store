@@ -1,5 +1,10 @@
 import { Request, Response } from "express";
-import { addProductToCart, getCart, removeProductFromCart, updateProductQuantity } from "../models/cartModel";
+import {
+  addProductToCart,
+  getCart,
+  removeProductFromCart,
+  updateProductQuantity
+} from "../models/cartModel";
 import { getProductById, Product } from "../models/productModel";
 
 export const getCartInfo = (req: Request, res: Response) => {
@@ -21,7 +26,7 @@ export const addToCart = async (req: Request, res: Response) => {
 
     addProductToCart(req.session.user?.email || "", product as Product);
 
-    res.redirect("/cart");
+    res.status(200).send("Product added to cart successfully.");
   } catch (error) {
     console.error(error);
     res.status(500).send(error instanceof Error ? error.message : "Internal Server Error");
@@ -41,7 +46,7 @@ export const updateCart = (req: Request, res: Response) => {
       return res.status(400).send("Quantity must be a number.");
     }
     updateProductQuantity(req.session.user?.email || "", productId, quantity);
-    res.redirect("/cart");
+    res.status(200).send("Product updated in cart successfully.");
   } catch (error) {
     console.error(error);
     res.status(500).send(error instanceof Error ? error.message : "Internal Server Error");
@@ -49,13 +54,13 @@ export const updateCart = (req: Request, res: Response) => {
 };
 
 export const removeFromCart = (req: Request, res: Response) => {
-  try { 
+  try {
     const { productId } = req.body;
     if (!productId) {
       return res.status(400).send("Parameter 'productId' is required.");
     }
     removeProductFromCart(req.session.user?.email || "", productId);
-    res.redirect("/cart");
+    res.status(200).send("Product removed from cart successfully.");
   } catch (error) {
     console.error(error);
     res.status(500).send(error instanceof Error ? error.message : "Internal Server Error");
