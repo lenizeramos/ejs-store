@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <%- include("../partials/head.ejs", { title: "Checkout" , styles:"/css/checkout.css" },) %>
+  <%- include("../partials/head.ejs", { title: "CheckoutSuccess" , styles:"/css/checkout.css" },) %>
   <link rel="stylesheet" href="/css/home.css" />
   <script src="/js/checkout.js" defer></script>
   </head>
   <body>
-    <header><%- include("../partials/header.ejs", {page: "checkout"}) %></header>
-
-    <h1 class="mainTitle">Checkout</h1>
+    <header><%- include("../partials/header.ejs", {page: "checkoutSuccess"}) %></header>
 
     <div class="tableContainer">
       <% if (checkout.length === 0) { %>
+        <h1 class="mainTitle">Let's go shopping</h1>
         <p class="enptyInfo">Your cart is empty. Let's add some items!!</p>
         <div class="cancelAndCheckout">
           <a href="/products" class="btn btn-danger delete-button">Cancel</a>
         </div>    
       <% } else { %>
+        <h1 class="mainTitle">Checkout Successful</h1>
         <table class="itemList">
           <tr>
             <th>Image</th>
@@ -40,11 +40,12 @@
         </table>  
         <h2 class="totalAll">Total : $<%= total %></h2>
         <div class="cancelAndCheckout">
-          <a href="/cart" class="btn btn-danger delete-button">Cancel</a>
-          <a href="/cart/checkout/checkoutSuccess" class="btn btn-success">Checkout</a>
+          <a href="/auth/logout" class="btn btn-danger delete-button">Logout</a>
+          <a href="/products" class="btn btn-success">Keep shopping</a>
         </div>
-          <% } %>  
+      <% } %>  
     </div>
+
 
 </body>
 </html>
