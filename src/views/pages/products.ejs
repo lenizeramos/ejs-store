@@ -20,7 +20,7 @@
                             <p class="price">Price: $<%= product.price %></p>
                             <div class="product-buttons">
                                 <div class="button">
-                                    <!-- <button class="more-details"><a href="<%= product.description %>">More Details</a></button> -->
+                                    <button class="more-details" data-product-description = "<%= product.description%>">More details</button>
                                     <button class="add-to-cart" 
                                     data-product-title="<%= product.title%>" data-product-id="<%= product.id%>" >Add to Cart</button>
                                 </div>
@@ -31,13 +31,17 @@
                                 <button type="submit">Add to cart</button>
                             </form> -->
 
-                            <div class="product-modal">
-                                <p class="product-description"><%= product.description %></p>
-                            </div>
+                            
                         </div>
                     </li>
                 <% }) %>
             </ul>
+            <div class="product-modal">
+                <span class="close-tag">Close</span>
+                <div class="modal-content">
+
+                </div>
+            </div>
         </div>
     </div>
 </body>
