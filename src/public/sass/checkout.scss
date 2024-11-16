@@ -3,37 +3,43 @@ body{
   padding: 0;
   box-sizing: border-box;
 
-  .container{
+  .mainTitle{
     width: 80%;
-    list-style: none;
-    border: 1px solid pink;
+    text-align: center;
     margin: auto;
-    li{
-      height: 250px;
-      width: 90%;
-      margin: auto;
-      display: flex;
-      border: 1px solid red;
-      margin-bottom: 2rem;
-      .imgContainer{
-        height: 100%;
-        place-content: center;
-        img{
-          width: 220px;
-          height: 220px;
-          border-radius: 5px;
-        }
-      }
-      .textContainer{
-        padding-left: 2rem;
-        .title{
-          margin-top: 1rem;
-          margin-bottom: 3rem;
-        }
-        .totalPrice{
-          font-weight: 800;
-        }
-      }
+    padding: 1rem 0;
+  }
+  .itemList{
+    width: 80%;
+    margin: auto;
+    border-top: 1px solid rgb(65, 65, 65);
+    border-left: 1px solid rgb(65, 65, 65);
+    th,td{
+      border-bottom: 1px solid rgb(65, 65, 65);
+      border-right: 1px solid rgb(65, 65, 65);
     }
+    .imgContainer{
+      text-align: center;
+      img{
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+      }  
+    }
+    p{
+      margin-bottom: 0;
+    }
+  }
+  .totalAll{
+    width: 80%;
+    margin: auto;
+    text-align: right;
+    padding: 1rem 0;
+  }
+  .cancelAndCheckout{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem auto 1rem;
   }
 }
