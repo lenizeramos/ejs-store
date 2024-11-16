@@ -4,7 +4,9 @@
     <%- include("../partials/head.ejs", { title: "Products", styles: "/css/products.css" }) %>
   </head>
   <body>
-    <header><%- include("../partials/header.ejs", {page: "products"}) %></header>
+    <header><%- include("../partials/header.ejs", {page: "products"}) %>
+    <script type="module" src="/js/product.js" defer></script>
+    </header>
     <div class="big-container">
         <h1>Products</h1>
         <div class="wrapper-container">
@@ -14,14 +16,34 @@
                         <div class="item-wrapper">
                             <div class="image-container" style="background-image: url('<%= product.image%>');"></div>
 
-                            <p class="product-title"><%= product.title %></p>
-                            <p class="product-description"><%= product.description %></p>
+                            <p class="product-title<%=product.id%>"><%= product.title %></p>
                             <p class="price">Price: $<%= product.price %></p>
+                            <div class="product-buttons">
+                                <div class="button">
+                                    <button class="more-details" data-product-description = "<%= product.description%>">More details</button>
+                                    <button class="add-to-cart" 
+                                    data-product-title="<%= product.title%>" data-product-id="<%= product.id%>" >Add to Cart</button>
+                                </div>
+                            </div>
+<!-- 
+                            <form action="/cart/add">
+                                <input type="hidden" name="<%= product.id %>" value="<%= product.id %>">
+                                <button type="submit">Add to cart</button>
+                            </form> -->
+
+                            
                         </div>
                     </li>
                 <% }) %>
             </ul>
+            <div class="product-modal">
+                <span class="close-tag">Close</span>
+                <div class="modal-content">
+
+                </div>
+            </div>
         </div>
     </div>
 </body>
+
 </html>
