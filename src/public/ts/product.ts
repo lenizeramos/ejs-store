@@ -1,54 +1,37 @@
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
+
+import { stringify } from "querystring";
 
 $(()=>{
     
     console.log("New")
 
-    const url = "localhost:3000/cart/add";
+    const url = "http://localhost:3000/cart/add";
 
-    // const postData = (id:number)=>{
-    //     $.ajax({
-    //         url: url,
-    //         type: 'POST',
-    //         data:{
-    //             productId:id
-    //         },
-    //         success: function(response){
-    //             console.log("Server Response: ", response)
-    //         },
-    //         error: function(status, error){
-    //             console.log("Error: ", error)
-    //         }
-    //     })
-    // }
+    const postData = (id:number)=>{
+        $.ajax({
+            url: url,
+            type: 'POST',
+            contentType: 'application/json',
+            data:JSON.stringify({productId:id}),
+            success: function(response){
+                console.log("Server Response: ", response)
+            },
+            error: function(jqXHR,status, error){
+                console.log("Error: ", status, error)
+            }
+        })
+    }
 
     const addToCartButtons = $(".add-to-cart");
-    // const Toast = Swal.mixin({
-    //     toast: true,
-    //     position: "bottom-end",
-    //     showConfirmButton: false,
-    //     timer: 2000,
-    //     timerProgressBar: true,
-    //     didOpen: (toast:HTMLElement) => {
-    //       toast.onmouseenter = Swal.stopTimer;
-    //       toast.onmouseleave = Swal.resumeTimer;
-    //     },
-    //   });
     
     addToCartButtons.on('click', (e:JQuery.ClickEvent) => {
         const target = $(e.currentTarget);
         const productId = target.data('product-id') as number;
         const productTitle = target.data('product-title') as string
-        console.log(productTitle)
 
-        // Toast.fire({
-        //     text: ` ${productTitle} added to cart`,
-        //     icon: "success",
-        //     color: "black",
-        //   });
-
-        // postData(productId)
-
+        postData(productId)
+        console.log("Title: ", productTitle)
         console.log("Product ID: ", productId)
     })
 

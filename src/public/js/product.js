@@ -1,46 +1,30 @@
 "use strict";
+// import Swal from 'sweetalert2';
 Object.defineProperty(exports, "__esModule", { value: true });
 $(function () {
     console.log("New");
-    var url = "localhost:3000/cart/add";
-    // const postData = (id:number)=>{
-    //     $.ajax({
-    //         url: url,
-    //         type: 'POST',
-    //         data:{
-    //             productId:id
-    //         },
-    //         success: function(response){
-    //             console.log("Server Response: ", response)
-    //         },
-    //         error: function(status, error){
-    //             console.log("Error: ", error)
-    //         }
-    //     })
-    // }
+    var url = "http://localhost:3000/cart/add";
+    var postData = function (id) {
+        $.ajax({
+            url: url,
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ productId: id }),
+            success: function (response) {
+                console.log("Server Response: ", response);
+            },
+            error: function (jqXHR, status, error) {
+                console.log("Error: ", status, error);
+            }
+        });
+    };
     var addToCartButtons = $(".add-to-cart");
-    // const Toast = Swal.mixin({
-    //     toast: true,
-    //     position: "bottom-end",
-    //     showConfirmButton: false,
-    //     timer: 2000,
-    //     timerProgressBar: true,
-    //     didOpen: (toast:HTMLElement) => {
-    //       toast.onmouseenter = Swal.stopTimer;
-    //       toast.onmouseleave = Swal.resumeTimer;
-    //     },
-    //   });
     addToCartButtons.on('click', function (e) {
         var target = $(e.currentTarget);
         var productId = target.data('product-id');
         var productTitle = target.data('product-title');
-        console.log(productTitle);
-        // Toast.fire({
-        //     text: ` ${productTitle} added to cart`,
-        //     icon: "success",
-        //     color: "black",
-        //   });
-        // postData(productId)
+        postData(productId);
+        console.log("Title: ", productTitle);
         console.log("Product ID: ", productId);
     });
     var moreDetails = $(".more-details");
