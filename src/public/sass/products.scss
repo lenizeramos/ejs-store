@@ -21,7 +21,7 @@ body{
 
 
 .big-container{
-    padding: 0 2rem;
+    // padding: 0 2rem;
     .page-title{
         padding: 0 7rem;
         margin: 1rem;
@@ -112,7 +112,7 @@ body{
                                 .more-details{
                                     background-color: lightgrey;
                                     color: #041F46 !important;
-                                    
+
                                 }
                             }
                         }
@@ -187,7 +187,7 @@ body{
                                 .item-description{
                                     font-size: 15px;
                                 }
-                                
+
                             }
                         }
                     }
@@ -195,4 +195,115 @@ body{
             }
         }
     }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .big-container{
+        .page-title{
+            padding: 0 2rem;
+        }
+        .wrapper-container{
+            padding: 1rem 3rem;
+            ul{
+                justify-content: space-between;
+                .item-container{
+                    width: 48%;
+                }
+            }
+        }
+    }
+
+}
+// .product-modal{
+            //     display:none;
+            //     position: fixed;
+            //     z-index: 1;
+            //     left: 0;
+            //     top: 0;
+            //     width: 100%;
+            //     height: 100%;
+            //     background-color: rgb(0,0,0);
+            //     background-color: rgba(0,0,0,0.4);
+            //     .container{
+            //         width: 100vw;
+            //         height: 100vh;
+            //         display: flex;
+            //         .modal-content {
+            //             background-color: #fefefe;
+            //             margin: 0.5rem auto;
+            //             padding: 20px;
+            //             border-radius: 15px;
+            //             border: 1px solid #888;
+            //             button{
+            //                 border: 1px #546a76 solid;
+            //                 display: flex;
+            //                 justify-content: center;
+            //                 align-items: center;
+            //                 align-self: flex-end;
+            //                 width: 20px;
+            //                 height: 20px;
+            //                 padding: 1rem;
+            //                 border-radius: 50%;
+            //                 background-color: #041F46;
+            //                 color: #dbd3c9;
+            //             }
+            //             .content-container{
+            //                 display: flex;
+            //                 padding-bottom: 2rem;
+            //                 height: 100%;
+            //                 .image-container{
+            //                     width: 40%;
+            //                     display: flex;
+            //                     align-items: center;
+            //                     img{
+            //                         width: 100%;
+            //                     }
+            //                 }
+            //                 .details{
+            //                     .product-title{
+            //                         font-weight: bold;
+            //                         font-size: 30px;
+            //                         margin: 0;
+            //                         padding: 1rem 3rem;
+
+            //                     }
+            //                     .description{
+            //                         height: 80%;
+            //                         display: flex;
+            //                         flex-direction: column;
+            //                         justify-content: center;
+            //                         padding: 1rem 3rem;
+            //                         .tag{
+            //                             font-weight: bold;
+            //                             font-size: 20px;
+            //                         }
+            //                         .item-description{
+            //                             font-size: 15px;
+            //                         }
+
+            //                     }
+            //                 }
+            //             }
+            //         }
+            //     }
+            // }
+@media only screen and (max-width: 425px) {
+    .big-container{
+        .page-title{
+            padding: 0;
+            h1{
+                font-size: 20px;
+            }
+        }
+        .wrapper-container{
+            padding: 1rem;
+            ul{
+                .item-container{
+                    width: 100%;
+                }
+            }
+        }
+    }
+
 }
