@@ -12,6 +12,12 @@ nav{
     a{
         color: #dbd3c9 !important;
     }
+    .shop-logo{
+        font-size: 30px;
+        font-weight: bolder;
+        color: #FFA101 !important;
+        text-decoration: none;
+    }
 }
 body{
     // background-color: #d0b17a;
@@ -66,7 +72,7 @@ body{
         left: 1rem;
     }
     .next-button{
-        right: 1rem;
+        right: 2rem;
     }
     ul{
         margin: 0;

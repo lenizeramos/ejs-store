@@ -10,6 +10,12 @@ nav {
 nav a {
   color: #dbd3c9 !important;
 }
+nav .shop-logo {
+  font-size: 30px;
+  font-weight: bolder;
+  color: #FFA101 !important;
+  text-decoration: none;
+}
 
 body {
   background-color: #FFA101;
@@ -64,7 +70,7 @@ body {
   left: 1rem;
 }
 .carousel .next-button {
-  right: 1rem;
+  right: 2rem;
 }
 .carousel ul {
   margin: 0;
