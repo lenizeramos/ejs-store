@@ -1,6 +1,6 @@
 // import Swal from 'sweetalert2';
 
-import { stringify } from "querystring";
+// import { stringify } from "querystring";
 
 $(()=>{
     

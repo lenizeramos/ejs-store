@@ -1,6 +1,5 @@
-"use strict";
 // import Swal from 'sweetalert2';
-Object.defineProperty(exports, "__esModule", { value: true });
+// import { stringify } from "querystring";
 $(function () {
     console.log("New");
     var url = "http://localhost:3000/cart/add";

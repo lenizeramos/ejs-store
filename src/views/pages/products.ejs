@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <%- include("../partials/head.ejs", { title: "Products", styles: "/css/products.css" }) %>
+    <script type="module" src="/js/product.js" defer></script>
+
   </head>
   <body>
     <header><%- include("../partials/header.ejs", {page: "products"}) %>
-    <script type="module" src="/js/product.js" defer></script>
     </header>
     <div class="big-container">
         <h1>Products</h1>
