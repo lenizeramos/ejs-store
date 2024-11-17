@@ -1,3 +1,37 @@
+body {
+  height: 100vh;
+}
 
+.mainContainer {
+  text-align: center;
+  height: 100%;
+}
+.mainContainer .mainTitleGoBackShopping {
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%);
+  position: absolute;
+}
+.mainContainer .mainTitleGoBackShopping .cancelAndCheckout {
+  margin-top: 3rem;
+}
+.mainContainer .mainContainerSuccess {
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%);
+  position: absolute;
+}
+.mainContainer .mainContainerSuccess .mainTitleContainer {
+  margin-bottom: 3rem;
+}
+.mainContainer .mainContainerSuccess .mainTitleContainer .mainTitle {
+  font-size: 60px;
+}
+.mainContainer .mainContainerSuccess .cancelAndCheckout {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 3rem;
+}
 
 /*# sourceMappingURL=checkoutSuccess.css.map */
