@@ -12,7 +12,10 @@
 
     <div class="tableContainer">
       <% if (checkout.length === 0) { %>
-        <p>Your cart is empty. Let's add some items!!</p>
+        <p class="enptyInfo">Your cart is empty. Let's add some items!!</p>
+        <div class="cancelAndCheckout">
+          <a href="/products" class="btn btn-danger delete-button">Cancel</a>
+        </div>    
       <% } else { %>
         <table class="itemList">
           <tr>
@@ -35,13 +38,12 @@
           </tr>
           <% }) %>
         </table>  
-      <% } %>  
-      <h2 class="totalAll">Total : $<%= total %></h2>
-    </div>
-
-    <div class="cancelAndCheckout">
-      <a href="/cart" class="btn btn-danger delete-button">Cancel</a>
-      <a href="/cart/checkout" class="btn btn-success">Checkout</a>
+        <h2 class="totalAll">Total : $<%= total %></h2>
+        <div class="cancelAndCheckout">
+          <a href="/cart" class="btn btn-danger delete-button">Cancel</a>
+          <a href="/cart/checkout/checkoutSuccess" class="btn btn-success">Checkout</a>
+        </div>
+          <% } %>  
     </div>
 
 </body>

@@ -3,6 +3,9 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+body .enptyInfo {
+  text-align: center;
+}
 body .mainTitle {
   width: 80%;
   text-align: center;

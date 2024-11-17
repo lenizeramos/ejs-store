@@ -10,7 +10,7 @@ export interface Cart {
   products: CartItem[];
 }
 
-let cartList: Cart[] = [
+export let cartList: Cart[] = [
   {
     userEmail: "admin@admin.com",
     products: [
