@@ -1,4 +1,7 @@
+import Swal from 'sweetalert2';
+
 $(()=>{
+    
     console.log("New")
 
     const url = "localhost:3000/cart/add";
@@ -20,10 +23,29 @@ $(()=>{
     // }
 
     const addToCartButtons = $(".add-to-cart");
+    // const Toast = Swal.mixin({
+    //     toast: true,
+    //     position: "bottom-end",
+    //     showConfirmButton: false,
+    //     timer: 2000,
+    //     timerProgressBar: true,
+    //     didOpen: (toast:HTMLElement) => {
+    //       toast.onmouseenter = Swal.stopTimer;
+    //       toast.onmouseleave = Swal.resumeTimer;
+    //     },
+    //   });
     
     addToCartButtons.on('click', (e:JQuery.ClickEvent) => {
         const target = $(e.currentTarget);
         const productId = target.data('product-id') as number;
+        const productTitle = target.data('product-title') as string
+        console.log(productTitle)
+
+        // Toast.fire({
+        //     text: ` ${productTitle} added to cart`,
+        //     icon: "success",
+        //     color: "black",
+        //   });
 
         // postData(productId)
 
@@ -35,20 +57,29 @@ $(()=>{
     moreDetails.on('click', (e:JQuery.ClickEvent) => {
         const target = $(e.currentTarget);
         const description = target.data('product-description') as string
-        const modal = target.closest(".wrapper-container").find(".product-modal")
-        const modalContent = target.closest('wrapper-container').find('modal-content');
+        const image = target.data('product-image') as string
+        const title = target.data('product-title') as string
 
-        const descriptionElement = $(`
-            <p>Description</p>
-            <p class = "product-description">${description}</p>
-            `)
+        //DOM 
+        const wrapper = target.closest('.wrapper-container')
+        const modal = wrapper.find('.product-modal')
+        const modalDescription = modal.find('.item-description');
+        const modalImage = modal.find('.image')
+        const modalTitle = modal.find('.product-title')
 
-            modal.css('display','block')
-            modalContent.append(descriptionElement);
-        
-        
-        console.log("Description: ", description)
-        
+        //
+        modal.css('display','block')
+        modalImage.attr('src', image)
+        modalTitle.text(title)
+        modalDescription.text(description)
+
+        console.log("title: ", title)
+    })
+
+    $(document).on('keydown', (e:JQuery.KeyDownEvent)=>{
+        if(e.key === 'Escape'){
+            $('.product-modal').css('display', 'none')
+        }
     })
 
     const closeTag = $(".close-tag")
@@ -59,34 +90,11 @@ $(()=>{
         modal.css('display','none')
         
     })
-    // $(window).on('click', (event)=>{
-    //     const modal = $(this).closest(".wrapper-container").find(".product-modal")
 
-    //     if($(event.target).is(modal)){
-    //         modal.css('display','none')
-    //     }
-    // })
 
 });
 
 
-    // $("#1").on("click", ()=>{
-    //     const item = $(this).closest(".item-wrapper1").find(".product-title1").text();
-    //     console.log($(".add-to-cart").val())
-    // //     console.log("first item: ")
-    // //    const id = 1;
-    // //    postData(id);
 
-    // })
-    // $("#2").on("click", ()=>{
-    //     const item = $(this).closest(".item-wrapper1").find(".product-title1").text();
-    //     console.log($(".add-to-cart").val())
-    //     // console.log("item: ",item)
-    // })
-    // $("#3").on("click", ()=>{
-    //     const item = $(this).closest(".item-wrapper1").find(".product-title1").text();
-    //     console.log($(".add-to-cart").val())
-    //     // console.log("item: ",item)
-    // })
 
 

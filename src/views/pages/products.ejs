@@ -14,32 +14,48 @@
                 <% products.forEach(product => { %>
                     <li class="item-container">
                         <div class="item-wrapper">
-                            <div class="image-container" style="background-image: url('<%= product.image%>');"></div>
-
-                            <p class="product-title<%=product.id%>"><%= product.title %></p>
-                            <p class="price">Price: $<%= product.price %></p>
-                            <div class="product-buttons">
-                                <div class="button">
-                                    <button class="more-details" data-product-description = "<%= product.description%>">More details</button>
-                                    <button class="add-to-cart" 
-                                    data-product-title="<%= product.title%>" data-product-id="<%= product.id%>" >Add to Cart</button>
+                            <div class="image-container" >
+                                <img src="<%= product.image%>" alt="">
+                            </div>
+                            <div class="product-content">
+                                <!-- <div class="main-details">
+                                    <p class="product-title"><%= product.title %></p>
+                                    <p class="price">CAD $<%= product.price %></p>
+                                </div> -->
+                                <p class="product-title"><%= product.title %></p>
+                                <p class="price">CAD $<%= product.price %></p>
+                                <div class="product-buttons">
+                                    <div class="button">
+                                        <button class="more-details"
+                                        data-product-title="<%= product.title%>"
+                                        data-product-description = "<%= product.description%>" data-product-image="<%= product.image%>"
+                                        >More details</button>
+                                        <button class="add-to-cart"
+                                        data-product-title="<%= product.title%>" data-product-id="<%= product.id%>" ><i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
                                 </div>
                             </div>
-<!-- 
-                            <form action="/cart/add">
-                                <input type="hidden" name="<%= product.id %>" value="<%= product.id %>">
-                                <button type="submit">Add to cart</button>
-                            </form> -->
-
-                            
                         </div>
                     </li>
                 <% }) %>
             </ul>
             <div class="product-modal">
-                <span class="close-tag">Close</span>
-                <div class="modal-content">
-
+                <div class="container">
+                    <div class="modal-content">
+                        <button class="close-tag"><i class="fa-solid fa-x"></i></button>
+                        <div class="content-container">
+                            <div class="image-container" >
+                                <img class= "image" src="" class alt="">
+                            </div>
+                            <div class="details">
+                                <p class="product-title"></p>
+                                <div class="description">
+                                    <p class="tag">Description: </p>
+                                    <p class="item-description"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
