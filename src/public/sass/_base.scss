@@ -1,0 +1,28 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ffa101;
+}
+
+.page-title {
+    padding: 0 2.5rem;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    h1 {
+      background-color: #041f46;
+      text-align: center;
+      width: 100%;
+      padding: 1rem 0;
+      margin: 0;
+      color: #ffa101;
+      font-weight: bolder;
+      letter-spacing: 0.3rem;
+    }
+  }

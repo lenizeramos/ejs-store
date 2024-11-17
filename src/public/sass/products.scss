@@ -1,4 +1,7 @@
-*{
+@import "./_base";
+@import "./_navbar";
+
+/* *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
@@ -17,12 +20,12 @@ nav{
 }
 body{
     background-color: #FFA101;
-}
+} */
 
 
 .big-container{
     // padding: 0 2rem;
-    .page-title{
+   /*  .page-title{
         padding: 0 7rem;
         margin: 1rem;
         display: flex;
@@ -37,7 +40,7 @@ body{
             font-weight: bolder;
             letter-spacing: 5px;
         }
-    }
+    } */
     .wrapper-container{
         padding: 1rem 8rem;
         ul{
@@ -67,6 +70,7 @@ body{
 
                         img{
                             width: auto;
+                            max-width: 100%;
                             height: 150px;
                         }
                     }
@@ -208,7 +212,7 @@ body{
             ul{
                 justify-content: space-between;
                 .item-container{
-                    width: 48%;
+                    width: 95%;
                 }
             }
         }

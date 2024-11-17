@@ -19,7 +19,7 @@ $(() => {
 
   const updateButtons = $(".update-button");
 
-  updateButtons.on("click", (e: JQuery.ClickEvent) => {
+  updateButtons.on("click", (e) => {
     const target = $(e.currentTarget);
     const productId = target.data("product-id") as number;
     const quantity = target.closest("form").find("input[name='quantity']").val() as string;
@@ -35,7 +35,7 @@ $(() => {
 
   const deleteButtons = $(".delete-button");
 
-  deleteButtons.on("click", (e: JQuery.ClickEvent) => {
+  deleteButtons.on("click", (e) => {
     const target = $(e.currentTarget);
     const productId = target.data("product-id") as number;
 

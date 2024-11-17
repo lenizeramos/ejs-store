@@ -1,11 +1,34 @@
-* {
-  margin: 0px;
-  padding: 0px;
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ffa101;
+}
+
+.page-title {
+  padding: 0 2.5rem;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+}
+.page-title h1 {
+  background-color: #041f46;
+  text-align: center;
+  width: 100%;
+  padding: 1rem 0;
+  margin: 0;
+  color: #ffa101;
+  font-weight: bolder;
+  letter-spacing: 0.3rem;
 }
 
 nav {
-  background-color: #041F46;
+  background-color: #041f46;
 }
 nav a {
   color: #dbd3c9 !important;
@@ -13,29 +36,47 @@ nav a {
 nav .shop-logo {
   font-size: 30px;
   font-weight: bolder;
-  color: #FFA101 !important;
+  color: #ffa101 !important;
   text-decoration: none;
 }
 
-body {
-  background-color: #FFA101;
+/* *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
-
-.big-container .page-title {
-  padding: 0 7rem;
-  margin: 1rem;
-  display: flex;
-  justify-content: center;
+nav{
+    background-color: #041F46;
+    a{
+        color: #dbd3c9 !important;
+    }
+    .shop-logo{
+        font-size: 30px;
+        font-weight: bolder;
+        color: #FFA101 !important;
+        text-decoration: none;
+    }
 }
-.big-container .page-title h1 {
-  background-color: #041F46;
-  text-align: center;
-  width: 100%;
-  padding: 1rem 0;
-  margin: 0;
-  color: #FFA101;
-  font-weight: bolder;
-  letter-spacing: 5px;
+body{
+    background-color: #FFA101;
+} */
+.big-container {
+  /*  .page-title{
+       padding: 0 7rem;
+       margin: 1rem;
+       display: flex;
+       justify-content: center;
+       h1{
+           background-color: #041F46;
+           text-align: center;
+           width: 100%;
+           padding: 1rem 0;
+           margin: 0;
+           color: #FFA101;
+           font-weight: bolder;
+           letter-spacing: 5px;
+       }
+   } */
 }
 .big-container .wrapper-container {
   padding: 1rem 8rem;
@@ -69,6 +110,7 @@ body {
 }
 .big-container .wrapper-container ul .item-container .item-wrapper .image-container img {
   width: auto;
+  max-width: 100%;
   height: 150px;
 }
 .big-container .wrapper-container ul .item-container .item-wrapper .product-content {
@@ -197,7 +239,7 @@ body {
     justify-content: space-between;
   }
   .big-container .wrapper-container ul .item-container {
-    width: 48%;
+    width: 95%;
   }
 }
 @media only screen and (max-width: 425px) {

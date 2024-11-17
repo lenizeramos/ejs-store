@@ -1,11 +1,34 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+body {
+  background-color: #ffa101;
+}
+
+.page-title {
+  padding: 0 2.5rem;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+}
+.page-title h1 {
+  background-color: #041f46;
+  text-align: center;
+  width: 100%;
+  padding: 1rem 0;
+  margin: 0;
+  color: #ffa101;
+  font-weight: bolder;
+  letter-spacing: 0.3rem;
+}
+
 nav {
-  background-color: #041F46;
+  background-color: #041f46;
 }
 nav a {
   color: #dbd3c9 !important;
@@ -13,12 +36,8 @@ nav a {
 nav .shop-logo {
   font-size: 30px;
   font-weight: bolder;
-  color: #FFA101 !important;
+  color: #ffa101 !important;
   text-decoration: none;
-}
-
-body {
-  background-color: #FFA101;
 }
 
 .carousel {
@@ -79,42 +98,42 @@ body {
 }
 
 .big-container {
-  padding: 0 2rem;
-}
-.big-container .page-title {
-  padding: 0 3.5rem;
-  margin: 0.5rem;
-  display: flex;
-  justify-content: center;
-}
-.big-container .page-title h1 {
-  background-color: #041F46;
-  text-align: center;
-  width: 100%;
-  padding: 1rem 0;
-  margin: 0;
-  color: #FFA101;
-  font-weight: bolder;
-  letter-spacing: 5px;
+  padding: 0 1.5rem;
+  /* .page-title {
+    padding: 0 2.5rem;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    h1 {
+      background-color: #041f46;
+      text-align: center;
+      width: 100%;
+      padding: 1rem 0;
+      margin: 0;
+      color: #ffa101;
+      font-weight: bolder;
+      letter-spacing: 0.3rem;
+    }
+  } */
 }
 .big-container .wrapper-container {
-  padding: 1rem;
+  padding: 1rem 1.5rem;
 }
 .big-container .wrapper-container ul {
   list-style: none;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 1rem;
   padding: 0;
 }
 .big-container .wrapper-container ul .item-container {
   width: 30%;
-  padding: 1rem;
+  padding: 1.5rem;
   text-align: center;
   border-radius: 15px;
-  background-color: #041F46;
-  box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.4);
+  background-color: #041f46;
+  box-shadow: 0px 0px 2rem 0.5rem rgba(0, 0, 0, 0.4);
 }
 .big-container .wrapper-container ul .item-container .item-wrapper {
   height: 100%;
@@ -150,16 +169,63 @@ body {
   border-radius: 15px;
   outline: none;
   border: none;
-  background-color: #041F46;
+  background-color: #041f46;
 }
 .big-container .goto-button button a {
-  font-size: 30px;
+  font-size: 1.5rem;
   font-weight: bolder;
-  color: #FFA101;
+  color: #ffa101;
   text-decoration: none;
 }
 .big-container .goto-button button a:hover {
   color: #dbd3c9;
+}
+
+@media only screen and (max-width: 600px) {
+  .carousel button {
+    font-size: 2.5rem;
+  }
+  .big-container {
+    padding: 0;
+  }
+  .big-container .page-title {
+    padding: 0;
+  }
+  .big-container .page-title h1 {
+    font-size: 1.5rem;
+  }
+  .big-container .wrapper-container {
+    padding: 1rem;
+  }
+  .big-container .wrapper-container ul .item-container {
+    width: 100%;
+    padding: 1rem;
+  }
+  .big-container .goto-button button a {
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+  .carousel button {
+    font-size: 3rem;
+  }
+  .big-container {
+    padding: 0 1rem;
+  }
+  .big-container .page-title {
+    padding: 0 1.5rem;
+  }
+  .big-container .wrapper-container {
+    padding: 1rem 1rem;
+  }
+  .big-container .wrapper-container ul .item-container {
+    width: 48%;
+  }
+}
+@media only screen and (min-width: 993px) {
+  .wrapper-container ul .item-container {
+    width: 30%;
+  }
 }
 
 /*# sourceMappingURL=home.css.map */
