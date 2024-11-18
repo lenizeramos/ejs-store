@@ -1,6 +1,7 @@
 // import Swal from 'sweetalert2';
 
 // import { stringify } from "querystring";
+declare let Notyf: any;
 
 $(() => {
   const url = "http://localhost:3000/cart/add";
@@ -22,12 +23,28 @@ $(() => {
 
   const addToCartButtons = $(".add-to-cart");
 
+  let notyf = new Notyf({
+    duration: 2500,
+    position: {
+      x: "right",
+      y: "bottom"
+    },
+    types: [
+      {
+        type: "success",
+        background: "#47af2b",
+        duration: 2000
+      }
+    ]
+  });
+
   addToCartButtons.on("click", (e) => {
     const target = $(e.currentTarget);
     const productId = target.data("product-id") as number;
     const productTitle = target.data("product-title") as string;
 
     postData(productId);
+    notyf.success(`${productTitle} has been added to cart`);
     console.log("Title: ", productTitle);
     console.log("Product ID: ", productId);
   });
