@@ -14,8 +14,6 @@ export const getCartInfo = (req: Request, res: Response) => {
 
 export const addToCart = async (req: Request, res: Response) => {
   try {
-    console.log('******** HERE *******', req.body)
-
     const { productId } = req.body;
 
     if (!productId) {

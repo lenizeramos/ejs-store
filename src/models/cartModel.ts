@@ -46,7 +46,6 @@ export const getCart = (userEmail: string) => {
   return cartList.find((cart) => cart.userEmail === userEmail);
 };
 
-
 export const addProductToCart = (userEmail: string, product: Product) => {
   if (isProductInCart(userEmail, product.id)) {
     incrementProductQuantity(userEmail, product.id);

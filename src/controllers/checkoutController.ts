@@ -9,8 +9,6 @@ export const checkout = (req: Request, res: Response) => {
   checkout.forEach(item => {
     totalAll += item.totalEach;    
   });
-
-  console.log("Alldata",checkout,totalAll)
   res.render("pages/checkout", {user: req.session.user, checkout: checkout, total:totalAll});
 };
 
@@ -24,6 +22,5 @@ export const checkoutSuccess = (req: Request, res: Response) => {
 
   cartList.find((cart) => cart.userEmail === req.session.user!.email)!.products.length = 0
 
-  console.log("Alldata",checkout,totalAll)
   res.render("pages/checkoutSuccess", {user: req.session.user, checkout: checkout, total:totalAll});
 };

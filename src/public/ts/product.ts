@@ -45,8 +45,6 @@ $(() => {
 
     postData(productId);
     notyf.success(`${productTitle} has been added to cart`);
-    console.log("Title: ", productTitle);
-    console.log("Product ID: ", productId);
   });
 
   const moreDetails = $(".more-details");
@@ -67,8 +65,6 @@ $(() => {
     modalImage.attr("src", image);
     modalTitle.text(title);
     modalDescription.text(description);
-
-    console.log("title: ", title);
   });
 
   $(document).on("keydown", (e) => {
