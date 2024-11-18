@@ -37,7 +37,7 @@
           </tr>
           <% }) %>
         </table>  
-        <h2 class="totalAll">Total : $<%= total %></h2>
+        <h2 class="totalAll">Total : <%= total.toLocaleString("en-CA", { style: "currency", currency: "CAD" }) %></h2>
         <div class="cancelAndCheckout">
           <a href="/cart" class="btn btn-danger delete-button">Go back to cart</a>
           <a href="/cart/checkout/checkoutSuccess" class="btn btn-success">Confirm purchase</a>

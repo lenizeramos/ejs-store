@@ -40,6 +40,14 @@ nav .shop-logo {
   text-decoration: none;
 }
 
+.container-cart {
+  width: 80%;
+  margin: 0 auto;
+}
+.container-cart img {
+  padding-right: 1.5rem;
+}
+
 @media only screen and (max-width: 600px) {
   .page-title {
     padding: 0;
