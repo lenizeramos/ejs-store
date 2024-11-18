@@ -10,29 +10,7 @@ export interface Cart {
   products: CartItem[];
 }
 
-export let cartList: Cart[] = [
- /*  {
-    userEmail: "admin@admin.com",
-    products: [
-      {
-        product: {
-          id: 7,
-          title: "White Gold Plated Princess",
-          price: 9.99,
-          description:
-            "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
-          category: "jewelery",
-          image: "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
-          rating: {
-            rate: 3,
-            count: 400
-          }
-        },
-        quantity: 1
-      }
-    ]
-  } */
-];
+export let cartList: Cart[] = [];
 
 export const createEmptyCart = (userEmail: string) => {
   if (cartList.find((cart) => cart.userEmail === userEmail)) {

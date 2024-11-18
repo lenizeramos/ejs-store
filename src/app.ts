@@ -6,7 +6,6 @@ import errorRoute from "./routes/errorRoute";
 import session from "express-session";
 import productRoute from "./routes/productRoute";
 import cartRoute from "./routes/cartRoute";
-/* import checkoutRoute from "./routes/checkoutRoute"; */
 import { SECRET } from "./env";
 import { SESSION_MAX_AGE } from "./middleware/constants";
 
@@ -32,7 +31,6 @@ app.use("/", homeRoute);
 app.use("/auth", authRoute);
 app.use("/products", productRoute);
 app.use("/cart", cartRoute);
-/* app.use(checkoutRoute); */
 
 // Error handling
 app.all("*", errorRoute);

@@ -1,16 +1,10 @@
-import bcrypt from "bcrypt";
-
 export interface AuthUser {
   name: string;
   email: string;
   password: string;
 }
 
-let authUsers: AuthUser[] = [/* {
-  name: "admin",
-  email: "admin@admin.com",
-  password: bcrypt.hashSync("admiN*&", 10)
-} */];
+let authUsers: AuthUser[] = [];
 
 export const setAuthUser = (user: AuthUser) => {
   const userExists = authUsers.find((u) => u.email === user.email);
