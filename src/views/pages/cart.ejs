@@ -13,6 +13,9 @@
   
       <% if (cart.products.length === 0) { %>
         <p class="text-center">Your cart is empty. Let's add some items!</p>
+        <div class="d-flex justify-content-center">
+          <button class="btn"><a href="/products">Go to Products</a></button>
+        </div>
       <% } else { %>
         <div class="row">
           <div class="col-md-8">
