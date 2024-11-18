@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partials/head.ejs", { title: "Home", styles:"/css/home.css" }) %>
+    <script type="module" src="/js/index.js" defer></script>
+
+  </head>
+  <body>
+    <header><%- include("../partials/header.ejs", {page: "home"}) %></header>
+    <section aria-label="Newest Deals">
+      <div class="carousel">
+        <button class="prev-button"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="next-button"><i class="fa-solid fa-arrow-right"></i></button>
+        <ul class="slide-container">
+          <li class="slide" data-active>
+            <img src="https://img.freepik.com/premium-photo/photocomposition-horizontal-shopping-banner-with-woman-big-smartphone_23-2151201773.jpg" alt="Welcome Store">
+          </li>
+          <li class="slide">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/003/572/417/small_2x/merry-christmas-sale-banner-template-design-free-vector.jpg" alt="Christmas Deals">
+          </li>
+          <li class="slide">
+            <img src="https://blog.placeit.net/wp-content/uploads/2021/11/ad-banner-maker-announcing-discounts-for-black-friday.png" alt="BlackFriday Deals">
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="big-container">
+      <div class="page-title">
+        <h1>HOME</h1>
+      </div>
+      <div class="wrapper-container">
+      <ul>
+        <% products.forEach(product => { %>
+            <li class="item-container">
+                <div class="item-wrapper">
+                  <div class="image-container" style = "background-image: url('<%= product.image%>');"></div>
+                  
+                  <p><%= product.title %></p>
+                </div>
+            </li>
+        <% }) %>
+    </ul>
+      </div>
+      <div class="goto-button">
+        <button><a href="/products">GO SHOPPING</a></button>
+      </div>
+    </div>
+</body>
+</html>

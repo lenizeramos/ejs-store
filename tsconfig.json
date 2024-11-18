@@ -1,8 +1,9 @@
 {
   "extends": "@tsconfig/node20/tsconfig.json",
   "compilerOptions": {
-    "outDir": "dist"
+    "outDir": "dist",
+    "lib": ["dom", "es6"]
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*","src/public/ts/**/*.ts"],
   "exclude": ["node_modules"]
 }

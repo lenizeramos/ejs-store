@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("../partials/head.ejs", { title: "CheckoutSuccess" , styles:"/css/checkoutSuccess.css" },) %>
+  <link rel="stylesheet" href="/css/home.css" />
+  <script src="/js/checkout.js" defer></script>
+  </head>
+  <body>
+    <header><%- include("../partials/header.ejs", {page: "checkoutSuccess"}) %></header>
+
+    <div class="mainContainer">
+      <% if (checkout.length === 0) { %>
+        <div class="mainTitleGoBackShopping">
+          <h1 class="mainTitle">Let's go shopping</h1>
+          <p class="enptyInfo">Your cart is empty. Let's add some items!!</p>
+          <div class="cancelAndCheckout">
+            <a href="/products" class="btn btn-danger delete-button">Go Shopping</a>
+          </div>      
+        </div>
+      <% } else { %>
+        <div class="mainContainerSuccess">
+          <div class="mainTitleContainer">
+            <h1 class="mainTitle">Thank you</h1>
+            <h2>for your order</h2>  
+          </div>
+          <div class="subComment">
+            <p>Thank you so much for your order. We really appreciate you supporting our business!</p>
+          </div>
+  
+          <div class="cancelAndCheckout">
+            <a href="/auth/logout" class="btn btn-danger delete-button">Logout</a>
+            <a href="/products" class="btn btn-success">Keep shopping</a>
+          </div>  
+        </div>
+      <% } %>  
+    </div>
+
+
+</body>
+</html>

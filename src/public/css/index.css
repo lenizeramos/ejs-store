@@ -1,0 +1,72 @@
+nav {
+  background-color: #041f46;
+}
+nav a {
+  color: #fbd797 !important;
+}
+nav .shop-logo {
+  font-size: 30px;
+  font-weight: bolder;
+  color: #fbd797 !important;
+  text-decoration: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fbd797;
+}
+
+.page-title {
+  padding: 0 2.5rem;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+}
+.page-title h1 {
+  background-color: #041f46;
+  text-align: center;
+  width: 100%;
+  padding: 1rem 0;
+  margin: 0;
+  color: #fbd797;
+  font-weight: bolder;
+  letter-spacing: 0.3rem;
+}
+
+main {
+  width: 90vw;
+  height: 90vh;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+  width: 100vw;
+}
+
+#form {
+  width: 400px;
+  padding: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 0.5rem;
+  background-color: white;
+}
+
+button {
+  background-color: #041f46 !important;
+  color: #fbd797 !important;
+}
+button:hover {
+  background-color: #020f22 !important;
+}
+
+/*# sourceMappingURL=index.css.map */

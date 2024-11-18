@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    
+     <div class="d-flex justify-content-evenly w-100">
+      <div class="d-flex justify-content-start w-100">
+        <a class="shop-logo" href="/">LENIVA SHO-P</a>
+      </div>
+
+
+    <div class="d-flex justify-content-end w-100">
+      <% if (page == "home") { %>
+        <div class="navbar-text ms-3">
+          <a class="nav-link" href="">Welcome, <strong><%= user.name %></strong>!</a>
+        </div>
+      <% } %>
+      <% if (page !== "register" && page !== "login" && page !== "home") { %>
+        <div class="navbar-text ms-3">
+          <a class="nav-link" href=""><strong><%= user.name %></strong></a>
+        </div>
+      <% } %>
+      <% if (page !== "register" && page !== "login") { %>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <% } else { %>
+        <ul class="navbar-nav ms-auto">
+          <% if (page == "register") { %>
+            <li class="nav-item">
+              <a class="nav-link" href="/auth/login">Login</a>
+            </li>
+          <% } %>
+  
+          <% if (page == "login") { %>
+            <li class="nav-item">
+              <a class="nav-link" href="/auth/register">Register</a>
+            </li>
+          <% } %>
+        </ul>
+      <% } %>
+      
+    </div></div>
+    
+
+ 
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+
+        <% if (page !== "register" && page !== "login") { %>
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/products">Shop</a></li>
+          <li class="nav-item"><a class="nav-link" href="/cart">Cart</a></li>
+          <li class="nav-item"><a class="nav-link" href="/auth/logout">Logout</a></li>
+        <% } %> 
+      </ul>
+    </div>
+  </div>
+</nav>

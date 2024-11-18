@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partials/head.ejs", { title: "Shop", styles: "/css/products.css" }) %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <script type="module" src="/js/product.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js" defer></script>
+
+  </head>
+  <body>
+    <header><%- include("../partials/header.ejs", {page: "products"}) %>
+    </header>
+    <div class="big-container">
+        <div class="page-title">
+            <h1>SHOP</h1>
+        </div>
+        <div class="wrapper-container">
+            <ul>
+                <% products.forEach(product => { %>
+                    <li class="item-container">
+                        <div class="item-wrapper">
+                            <div class="image-container" >
+                                <img src="<%= product.image%>" alt="">
+                            </div>
+                            <div class="product-content">
+                                <p class="product-title"><%= product.title %></p>
+                                <div class="product-buttons">
+                                    <p class="price">CAD $<%= product.price %></p>
+                                    <div class="button">
+                                        <button class="more-details"
+                                        data-product-title="<%= product.title%>"
+                                        data-product-description = "<%= product.description%>" data-product-image="<%= product.image%>"
+                                        ><i class="fa-solid fa-eye"></i></button>
+                                        <button class="add-to-cart"
+                                        data-product-title="<%= product.title%>" data-product-id="<%= product.id%>" ><i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                <% }) %>
+            </ul>
+            <div class="product-modal">
+                <div class="container">
+                    <div class="modal-content">
+                        <button class="close-tag"><i class="fa-solid fa-x"></i></button>
+                        <div class="content-container">
+                            <div class="image-container" >
+                                <img class= "image" src="" class alt="">
+                            </div>
+                            <div class="details">
+                                <p class="product-title"></p>
+                                <div class="description">
+                                    <p class="tag">Description: </p>
+                                    <p class="item-description"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

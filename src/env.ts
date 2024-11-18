@@ -8,3 +8,5 @@ config({ path: PATH });
 
 export const PORT = process.env.PORT || 3000;
 export const HOST = process.env.HOST || "localhost";
+
+export const SECRET = process.env.SECRET || "My secret value";

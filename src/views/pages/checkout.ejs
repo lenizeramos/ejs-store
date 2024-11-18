@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("../partials/head.ejs", { title: "Checkout" , styles:"/css/checkout.css" },) %>
+  <script src="/js/checkout.js" defer></script>
+  </head>
+  <body>
+    <header><%- include("../partials/header.ejs", {page: "checkout"}) %></header>
+
+    <div class="big-container"> <div class="page-title"><h1>CHECKOUT</h1></div></div>
+
+    <div class="tableContainer">
+      <% if (checkout.length === 0) { %>
+        <p class="enptyInfo">Your cart is empty. Let's add some items!!</p>
+        <div class="cancelAndCheckout">
+          <a href="/products" class="btn btn-danger delete-button">Cancel</a>
+        </div>    
+      <% } else { %>
+        <table class="itemList">
+          <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>sub Total</th>
+          </tr>
+  
+          <% checkout.forEach(checkoutItem => { %>
+          <tr>
+            <td><div class="imgContainer">
+              <img src="<%= checkoutItem.products.image %>" alt="<%= checkoutItem.products.title %>">
+            </div></td>
+            <td><p class="title"><%= checkoutItem.products.title %></p></td>
+            <td><p>$<%= checkoutItem.products.price %></p></td>
+            <td><p><%= checkoutItem.quantity %></p></td>
+            <td><p class="totalPrice">$<%= checkoutItem.totalEach %></p></td>
+          </tr>
+          <% }) %>
+        </table>  
+        <h2 class="totalAll">Total : <%= total.toLocaleString("en-CA", { style: "currency", currency: "CAD" }) %></h2>
+        <div class="cancelAndCheckout">
+          <a href="/cart" class="btn btn-danger delete-button">Go back to cart</a>
+          <a href="/cart/checkout/checkoutSuccess" class="btn btn-success">Confirm purchase</a>
+        </div>
+          <% } %>  
+    </div>
+</body>
+</html>
