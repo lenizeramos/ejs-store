@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include("../partials/head.ejs", { title: "Products", styles: "/css/products.css" }) %>
+    <%- include("../partials/head.ejs", { title: "Shop", styles: "/css/products.css" }) %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <script type="module" src="/js/product.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js" defer></script>
+
   </head>
   <body>
     <header><%- include("../partials/header.ejs", {page: "products"}) %>
-    <script type="module" src="/js/product.js" defer></script>
     </header>
     <div class="big-container">
-        <h1>Products</h1>
+        <div class="page-title">
+            <h1>SHOP</h1>
+        </div>
         <div class="wrapper-container">
             <ul>
                 <% products.forEach(product => { %>
@@ -18,18 +23,14 @@
                                 <img src="<%= product.image%>" alt="">
                             </div>
                             <div class="product-content">
-                                <!-- <div class="main-details">
-                                    <p class="product-title"><%= product.title %></p>
-                                    <p class="price">CAD $<%= product.price %></p>
-                                </div> -->
                                 <p class="product-title"><%= product.title %></p>
-                                <p class="price">CAD $<%= product.price %></p>
                                 <div class="product-buttons">
+                                    <p class="price">CAD $<%= product.price %></p>
                                     <div class="button">
                                         <button class="more-details"
                                         data-product-title="<%= product.title%>"
                                         data-product-description = "<%= product.description%>" data-product-image="<%= product.image%>"
-                                        >More details</button>
+                                        ><i class="fa-solid fa-eye"></i></button>
                                         <button class="add-to-cart"
                                         data-product-title="<%= product.title%>" data-product-id="<%= product.id%>" ><i class="fa-solid fa-cart-shopping"></i></button>
                                     </div>

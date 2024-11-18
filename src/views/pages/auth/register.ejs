@@ -42,6 +42,11 @@
             required
           />
         </div>
+        <% if (error) { %>
+          <div class="alert alert-danger" role="alert">
+            <%= error %>
+          </div>
+        <% } %>
         <button type="submit" id="submit" class="btn btn-primary btn-block">
           Register
         </button>

@@ -1,48 +1,57 @@
-body{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import "./_base";
+@import "./_navbar";
 
-  .enptyInfo{
-    text-align: center;
-  }
-  .mainTitle{
-    width: 80%;
-    text-align: center;
-    margin: auto;
-    padding: 1rem 0;
-  }
-  .itemList{
+body {
+  
+
+  .itemList {
+    background-color: white;
     width: 80%;
     margin: auto;
     border-top: 1px solid rgb(65, 65, 65);
-    border-left: 1px solid rgb(65, 65, 65);
-    th,td{
+    //border-left: 1px solid rgb(65, 65, 65);
+    th,
+    td {
       border-bottom: 1px solid rgb(65, 65, 65);
-      border-right: 1px solid rgb(65, 65, 65);
+      //border-right: 1px solid rgb(65, 65, 65);
     }
-    .imgContainer{
+    .imgContainer {
       text-align: center;
-      img{
+      padding: 0.5rem 0;
+      img {
         width: 50px;
         height: 50px;
         border-radius: 5px;
-      }  
+        
+      }
     }
-    p{
+    p {
       margin-bottom: 0;
     }
   }
-  .totalAll{
+  .totalAll {
     width: 80%;
     margin: auto;
     text-align: right;
     padding: 1rem 0;
   }
-  .cancelAndCheckout{
+  .cancelAndCheckout {
     width: 80%;
     display: flex;
     justify-content: space-around;
     margin: 2rem auto 1rem;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .page-title {
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+  .page-title {
+    padding: 0 1.5rem;
   }
 }

@@ -1,0 +1,24 @@
+@import "./_base";
+@import "./_navbar";
+
+.container-cart {
+  width: 80%;
+  margin: 0 auto;
+
+  img {
+    padding-right: 1.5rem;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .page-title {
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+  .page-title {
+    padding: 0 1.5rem;
+  }
+}

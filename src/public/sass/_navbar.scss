@@ -1,0 +1,14 @@
+@import "./_variables";
+
+nav {
+  background-color: $secondary-color;
+  a {
+    color: #dbd3c9 !important;
+  }
+  .shop-logo {
+    font-size: 30px;
+    font-weight: bolder;
+    color: $primary-color !important;
+    text-decoration: none;
+  }
+}
