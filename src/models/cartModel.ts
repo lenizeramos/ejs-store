@@ -11,7 +11,7 @@ export interface Cart {
 }
 
 export let cartList: Cart[] = [
-  {
+ /*  {
     userEmail: "admin@admin.com",
     products: [
       {
@@ -31,7 +31,7 @@ export let cartList: Cart[] = [
         quantity: 1
       }
     ]
-  }
+  } */
 ];
 
 export const createEmptyCart = (userEmail: string) => {

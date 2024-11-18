@@ -61,4 +61,12 @@ main {
   background-color: white;
 }
 
+button {
+  background-color: #041f46 !important;
+  color: #fbd797 !important;
+}
+button:hover {
+  background-color: #020f22 !important;
+}
+
 /*# sourceMappingURL=index.css.map */
