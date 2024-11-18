@@ -1,9 +1,11 @@
 @import "./_base";
 @import "./_navbar";
 
-body {
-  
-  .itemList {
+body{
+  .enptyInfo{
+    text-align: center;
+  }
+  .itemList{
     background-color: white;
     width: 80%;
     margin: auto;
