@@ -132,11 +132,11 @@
       border-radius: 15px;
       outline: none;
       border: none;
-      background-color: #041f46;
+      background-color: $secondary-color;
       a {
         font-size: 1.5rem;
         font-weight: bolder;
-        color: #ffa101;
+        color: $primary-color;
         text-decoration: none;
         &:hover {
           color: #dbd3c9;
@@ -156,9 +156,6 @@
 
     .page-title {
       padding: 0;
-      h1 {
-        font-size: 1.5rem;
-      }
     }
 
     .wrapper-container {

@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #ffa101;
+  background-color: #fbd797;
 }
 
 .page-title {
@@ -22,7 +22,7 @@ body {
   width: 100%;
   padding: 1rem 0;
   margin: 0;
-  color: #ffa101;
+  color: #fbd797;
   font-weight: bolder;
   letter-spacing: 0.3rem;
 }
@@ -36,7 +36,7 @@ nav a {
 nav .shop-logo {
   font-size: 30px;
   font-weight: bolder;
-  color: #ffa101 !important;
+  color: #fbd797 !important;
   text-decoration: none;
 }
 
@@ -174,7 +174,7 @@ nav .shop-logo {
 .big-container .goto-button button a {
   font-size: 1.5rem;
   font-weight: bolder;
-  color: #ffa101;
+  color: #fbd797;
   text-decoration: none;
 }
 .big-container .goto-button button a:hover {
@@ -190,9 +190,6 @@ nav .shop-logo {
   }
   .big-container .page-title {
     padding: 0;
-  }
-  .big-container .page-title h1 {
-    font-size: 1.5rem;
   }
   .big-container .wrapper-container {
     padding: 1rem;
