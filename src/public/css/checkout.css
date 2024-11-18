@@ -1,17 +1,89 @@
-/* Error: expected "{".
- *    ,
- * 21 |     width: 80%;
- *    |               ^
- *    '
- *   src\public\sass\checkout.scss 21:15  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: expected "{".\a    \2577 \a 21 \2502      width: 80%;\d\a    \2502                ^\a    \2575 \a   src\\public\\sass\\checkout.scss 21:15  root stylesheet';
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+body {
+  background-color: #fbd797;
+}
+
+.page-title {
+  padding: 0 2.5rem;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+}
+.page-title h1 {
+  background-color: #041f46;
+  text-align: center;
+  width: 100%;
+  padding: 1rem 0;
+  margin: 0;
+  color: #fbd797;
+  font-weight: bolder;
+  letter-spacing: 0.3rem;
+}
+
+nav {
+  background-color: #041f46;
+}
+nav a {
+  color: #dbd3c9 !important;
+}
+nav .shop-logo {
+  font-size: 30px;
+  font-weight: bolder;
+  color: #fbd797 !important;
+  text-decoration: none;
+}
+
+body .itemList {
+  background-color: white;
+  width: 80%;
+  margin: auto;
+  border-top: 1px solid rgb(65, 65, 65);
+}
+body .itemList th,
+body .itemList td {
+  border-bottom: 1px solid rgb(65, 65, 65);
+}
+body .itemList .imgContainer {
+  text-align: center;
+  padding: 0.5rem 0;
+}
+body .itemList .imgContainer img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+body .itemList p {
+  margin-bottom: 0;
+}
+body .totalAll {
+  width: 80%;
+  margin: auto;
+  text-align: right;
+  padding: 1rem 0;
+}
+body .cancelAndCheckout {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem auto 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .page-title {
+    padding: 0;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+  .page-title {
+    padding: 0 1.5rem;
+  }
+}
+
+/*# sourceMappingURL=checkout.css.map */

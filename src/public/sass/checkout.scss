@@ -1,11 +1,10 @@
 @import "./_base";
 @import "./_navbar";
 
-body{
-  .enptyInfo{
-    text-align: center;
-  }
-  .itemList{
+body {
+  
+
+  .itemList {
     background-color: white;
     width: 80%;
     margin: auto;
@@ -43,6 +42,7 @@ body{
     margin: 2rem auto 1rem;
   }
 }
+
 
 @media only screen and (max-width: 600px) {
   .page-title {
