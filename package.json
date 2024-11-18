@@ -6,7 +6,7 @@
   "scripts": {
     "setup": "npm i && husky install",
     "server": "tsnd --inspect -- src/index.ts",
-    "js": "tsc -w src/public/ts/*.ts --outDir src/public/js ",
+    "js": "tsc -w src/public/ts/*.ts --outDir src/public/js",
     "css": "sass -w src/public/sass:src/public/css",
     "hot-load": "browser-sync start -p http://localhost:3000 -f src/public src/views --port=3001",
     "dev": "concurrently \"npm run js\" \"npm run css\" \"npm run server\" \"npm run hot-load\"",

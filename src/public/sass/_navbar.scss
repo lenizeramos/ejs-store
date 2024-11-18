@@ -3,7 +3,7 @@
 nav {
   background-color: $secondary-color;
   a {
-    color: #dbd3c9 !important;
+    color: $primary-color !important;
   }
   .shop-logo {
     font-size: 30px;
@@ -11,4 +11,5 @@ nav {
     color: $primary-color !important;
     text-decoration: none;
   }
+  
 }

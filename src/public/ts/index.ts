@@ -1,5 +1,4 @@
 $(()=>{
-    console.log("I'm Ivan")
     const nextBtn = $('.next-button')
     const prevBtn = $('.prev-button')
 

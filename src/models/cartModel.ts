@@ -11,7 +11,7 @@ export interface Cart {
 }
 
 export let cartList: Cart[] = [
-  {
+ /*  {
     userEmail: "admin@admin.com",
     products: [
       {
@@ -31,7 +31,7 @@ export let cartList: Cart[] = [
         quantity: 1
       }
     ]
-  }
+  } */
 ];
 
 export const createEmptyCart = (userEmail: string) => {
@@ -45,7 +45,6 @@ export const createEmptyCart = (userEmail: string) => {
 export const getCart = (userEmail: string) => {
   return cartList.find((cart) => cart.userEmail === userEmail);
 };
-
 
 export const addProductToCart = (userEmail: string, product: Product) => {
   if (isProductInCart(userEmail, product.id)) {

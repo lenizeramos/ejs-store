@@ -6,11 +6,11 @@ export interface AuthUser {
   password: string;
 }
 
-let authUsers: AuthUser[] = [{
+let authUsers: AuthUser[] = [/* {
   name: "admin",
   email: "admin@admin.com",
   password: bcrypt.hashSync("admiN*&", 10)
-}];
+} */];
 
 export const setAuthUser = (user: AuthUser) => {
   const userExists = authUsers.find((u) => u.email === user.email);

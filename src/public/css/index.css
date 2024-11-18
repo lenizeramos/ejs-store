@@ -2,7 +2,7 @@ nav {
   background-color: #041f46;
 }
 nav a {
-  color: #dbd3c9 !important;
+  color: #fbd797 !important;
 }
 nav .shop-logo {
   font-size: 30px;
@@ -59,6 +59,14 @@ main {
   border: 1px solid #ced4da;
   border-radius: 0.5rem;
   background-color: white;
+}
+
+button {
+  background-color: #041f46 !important;
+  color: #fbd797 !important;
+}
+button:hover {
+  background-color: #020f22 !important;
 }
 
 /*# sourceMappingURL=index.css.map */

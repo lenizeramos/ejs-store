@@ -1,5 +1,4 @@
 $(function () {
-    console.log("I'm Ivan");
     var nextBtn = $('.next-button');
     var prevBtn = $('.prev-button');
     nextBtn.on('click', function (e) {

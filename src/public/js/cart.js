@@ -6,7 +6,6 @@ $(function () {
             contentType: "application/json",
             data: JSON.stringify(data),
             success: function (response) {
-                console.log("Server Response: ", response);
                 window.location.reload();
             },
             error: function (xhr, status, error) {

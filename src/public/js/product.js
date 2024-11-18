@@ -36,8 +36,6 @@ $(function () {
         var productTitle = target.data("product-title");
         postData(productId);
         notyf.success("".concat(productTitle, " has been added to cart"));
-        console.log("Title: ", productTitle);
-        console.log("Product ID: ", productId);
     });
     var moreDetails = $(".more-details");
     moreDetails.on("click", function (e) {
@@ -54,7 +52,6 @@ $(function () {
         modalImage.attr("src", image);
         modalTitle.text(title);
         modalDescription.text(description);
-        console.log("title: ", title);
     });
     $(document).on("keydown", function (e) {
         if (e.key === "Escape") {
