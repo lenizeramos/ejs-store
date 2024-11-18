@@ -23,13 +23,18 @@ export const registerUser: RequestHandler = async (
   next: NextFunction
 ) => {
   const { name, email, password } = req.body;
+  try {
+    const hashedPassword = await bcrypt.hash(password, 10);
+    setAuthUser({ name, email, password: hashedPassword });
+    createEmptyCart(email);
+    req.session.user = { name, email };
 
-  const hashedPassword = await bcrypt.hash(password, 10);
-  setAuthUser({ name, email, password: hashedPassword });
-  createEmptyCart(email);
-  req.session.user = { name, email };
-
-  res.redirect("/");
+    res.redirect("/");
+  } catch (error) {
+    res.render("pages/auth/register", {
+      error: (error as Error).message
+    });
+  }
 };
 
 export const loginUser: RequestHandler = async (

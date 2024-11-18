@@ -1,7 +1,43 @@
-* {
+nav {
+  background-color: #041f46;
+}
+nav a {
+  color: #dbd3c9 !important;
+}
+nav .shop-logo {
+  font-size: 30px;
+  font-weight: bolder;
+  color: #fbd797 !important;
+  text-decoration: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+
+body {
+  background-color: #fbd797;
+}
+
+.page-title {
+  padding: 0 2.5rem;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+}
+.page-title h1 {
+  background-color: #041f46;
+  text-align: center;
+  width: 100%;
+  padding: 1rem 0;
+  margin: 0;
+  color: #fbd797;
+  font-weight: bolder;
+  letter-spacing: 0.3rem;
 }
 
 main {
@@ -15,7 +51,6 @@ main {
   align-items: center;
   height: 85vh;
   width: 100vw;
-  background-color: #f8f9fa;
 }
 
 #form {
