@@ -1,3 +1,5 @@
+> **Note:** This repository is a personal backup of coursework originally developed as part of my studies at Cornerstone College. It was cloned from a institutional and private repository to preserve my contributions and development history.
+
 # LENIVA SHO-P Store
 
 A web application for managing user authentication, product browsing, and cart functionality, with RESTful endpoints for interacting with each feature.
